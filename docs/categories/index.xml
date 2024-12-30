@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Nitta Labo Tutorial</title>
-    <link>http://localhost:55577/categories/</link>
+    <link>https://amika11071107.github.io/categories/</link>
     <description>Recent content in Categories on Nitta Labo Tutorial</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:55577/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://amika11071107.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
