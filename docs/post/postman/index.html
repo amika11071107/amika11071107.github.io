@@ -56,58 +56,60 @@
   
   
   
-  <meta name="description" content="端末に情報を入力したときに、何が返ってきているのかを可視化するためのツール
-PostMan
-どうにかして新規登録をすると、下の画面が出てきます
+  <meta name="description" content="📚 PostMan
 
-↑〇を押します
-.
-.
+↑ここからデスクトップ版Postmanアプリをダウンロードできます
+Postmanにはweb版というブラウザで開けるものと、デスクトップ版があり、デスクトップ版しかlocalhost環境にアクセスできません
+デスクトップにPostmanアプリがない人はダウンロードしましょう
 
-↑□を押すと、
-.
-.
-↓GET POST PUT DELが出てきます
 
-↑POSTを押す
-.
-.
+Windows 64-bit などと書いたオレンジ色のボタンを押す
+ダウンロードしたexeを開く（setup)
+sign upする
+新しい Workspaces を作るので WorkSpaces と Create Workspace を押す 
+
+名前をLessonServerなどと決め、指示に従っていく
+🌷 この画面が出たらOK
+
+
+🌞 Postmanとは
+🌷 記述したバックエンドのコードが正しく動いているのかをテストするためのツールです
+🌷 バックエンドの Web API を呼び出して、何が返ってきているのかを可視化することができます
+🖊 作っていきます
+🌷 &#43; を押します
+
+
+
+
+
+
+🌷 Rest API basics を押します
+
+
+
+
+
+
+🌷 GET POST PUT DELが出てきます
+🌷 POSTを押します  
+
+
+
+
+
+
 Post
-↓Bodyを選択 
-↓x-www-form-urlencodedを選択 
-↓アカウントとパスワード の KeyとValueを入力するための欄が出てきます
-↓Key に account_id ,  passwordと入力
-↓Value に 自分のつけたいアカウント名とパスワードを入力
+🌷 localhost:8080/LessonServer/accountsと入力  
+🌷 Bodyを選択 
+🌷 x-www-form-urlencodedを選択 
+🌷 アカウントとパスワード の KeyとValueを入力するための欄が出てきます
+🌷 Key に account_id ,  passwordと入力
+🌷 Value に 自分のつけたいアカウント名とパスワードを入力 （ここでは myname と pass）
 （これがフォームデータとして x-www-form-urlencoded 形式で送信される
-Intellij起動して、
-↓Sendを押すと
-↓tokenが出てきます
-・tokenは登録したアカウント情報をGETするときや、アカウントをDELETEするときに利用する。
-・2回目にpostしたときは、「（入力したアカウントid）は既に存在します」と表示され、tokenは表示されないから、一回目にtokenはコピペしとく
-localhost:8080
-・localhostはコンピュータ自信を指す特別なホスト名
-・IPアドレスに置き換えると127.0.0.1と同じ
-・8080はポート番号
-
-AccountRest.java
-POSTは、@Consumesがいる
-
-GET
-{ここにaccountId入れる}。
-下はtokenだけ
-
-今はまだ何も情報を入れていないから、返ってくるintroduction は null になっている
-AccountRest.java
-
-AccountManager.java
-
-②作ったHashMap（accounts）に、アカウントIDを与えてaccounts.get(accountId)と書くことでそのアカウント情報を取ってくれる
-
-①アカウントIDとそれに対応するアカウント情報（Account）がまとまったHashMapを作成し、accountsに代入
-Account.java
-
-以上でPostmanは終わり🎉
-次はAndroidStudioでフロントエンドを書いていくよ！" />
+🌷 Intellij起動して、
+🌷 Sendを押すと
+🌷 200と表示されるとOKです   
+🌷 localhost:8080" />
   <meta name="author" content="←この日付無視してね" />
   
 
@@ -211,7 +213,7 @@ Account.java
   <meta itemprop="description" content="あ">
   <meta itemprop="datePublished" content="2019-03-08T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-03-08T00:00:00+00:00">
-  <meta itemprop="wordCount" content="58">
+  <meta itemprop="wordCount" content="105">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/postman/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
@@ -337,48 +339,75 @@ Account.java
     
   </header>
 
-  <section><p>端末に情報を入力したときに、何が返ってきているのかを可視化するためのツール</p>
-<p><a href="https://www.postman.com/downloads/">PostMan</a></p>
-<p>どうにかして新規登録をすると、下の画面が出てきます<br>
-<img src="https://amika11071107.github.io/images/postman1.png" alt="images">
-<em>↑<span style="color:deeppink">〇を押します</span></em><br>
-.<br>
-.<br>
-<img src="https://amika11071107.github.io/images/postman2.png" alt="images">
-<em>↑<span style="color:deeppink">□を押すと、</span></em><br>
-.<br>
-.<br>
-↓<span style="color:purple">GET POST PUT DELが出てきます</span><br>
-<img src="https://amika11071107.github.io/images/postman3.png" alt="images">
-<em>↑<span style="color:deeppink">POSTを押す</span></em><br>
-.<br>
-.</p>
+  <section><h2 id="-postmanhttpswwwpostmancomdownloads">📚 <a href="https://www.postman.com/downloads/">PostMan</a></h2>
+<ul>
+<li>↑ここからデスクトップ版Postmanアプリをダウンロードできます</li>
+<li>Postmanにはweb版というブラウザで開けるものと、デスクトップ版があり、デスクトップ版しかlocalhost環境にアクセスできません</li>
+<li>デスクトップにPostmanアプリがない人はダウンロードしましょう</li>
+</ul>
+<ol>
+<li>Windows 64-bit などと書いたオレンジ色のボタンを押す</li>
+<li>ダウンロードしたexeを開く（setup)</li>
+<li>sign upする</li>
+<li>新しい Workspaces を作るので WorkSpaces と Create Workspace を押す <br>
+<img src="https://amika11071107.github.io/images/postman8.png" alt="images"></li>
+<li>名前をLessonServerなどと決め、指示に従っていく<br>
+🌷 この画面が出たらOK
+<img src="https://amika11071107.github.io/images/postman9.png" alt="images"></li>
+</ol>
+<h2 id="-postmanとは">🌞 <strong>Postmanとは</strong></h2>
+<p>🌷 記述したバックエンドのコードが正しく動いているのかをテストするためのツールです<br>
+🌷 バックエンドの Web API を呼び出して、何が返ってきているのかを可視化することができます</p>
+<h2 id="-作っていきます">🖊 作っていきます</h2>
+<p>🌷 + を押します
+<img src="https://amika11071107.github.io/images/postman1.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Rest API basics を押します
+<img src="https://amika11071107.github.io/images/postman2.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 GET POST PUT DELが出てきます<br>
+🌷 POSTを押します  <br>
+<img src="https://amika11071107.github.io/images/postman3.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 <h2 id="post">Post</h2>
-<p>↓<span style="color:deeppink">Bodyを選択</span> <br>
-↓<span style="color:deeppink">x-www-form-urlencodedを選択</span> <br>
-↓<span style="color:deeppink">アカウントとパスワード</span> の <span style="color:purple">KeyとValueを入力するための欄が出てきます</span><br>
-↓<span style="color:purple">Key</span> に <span style="color:green">account_id ,  password</span>と<span style="color:deeppink">入力</span><br>
-↓<span style="color:purple">Value</span> に 自分のつけたいアカウント名とパスワードを<span style="color:deeppink">入力</span><br>
+<p>🌷 <strong><span style="color:yellowgreen">localhost:8080/LessonServer/accounts</span></strong>と<span style="color:deeppink">入力</span>  <br>
+🌷 <span style="color:deeppink">Bodyを選択</span> <br>
+🌷 <span style="color:deeppink">x-www-form-urlencodedを選択</span> <br>
+🌷 <span style="color:deeppink">アカウントとパスワード</span> の <span style="color:purple">KeyとValueを入力するための欄が出てきます</span><br>
+🌷 <span style="color:purple">Key</span> に <span style="color:green">account_id ,  password</span>と<span style="color:deeppink">入力</span><br>
+🌷 <span style="color:purple">Value</span> に 自分のつけたいアカウント名とパスワードを<span style="color:deeppink">入力</span> （ここでは myname と pass）<br>
 （これがフォームデータとして <span style="color:deeppink">x-www-form-urlencoded</span> 形式で送信される<br>
-<strong>Intellij起動</strong>して、<br>
-↓<span style="color:deeppink">Sendを押すと</span>
-↓<span style="color:purple">tokenが出てきます</span><br>
-・tokenは登録したアカウント情報をGETするときや、アカウントをDELETEするときに利用する。<br>
-・2回目にpostしたときは、「（入力したアカウントid）は既に存在します」と表示され、tokenは表示されないから、一回目にtokenはコピペしとく<br>
-<strong><span style="color:yellowgreen">localhost:8080</span></strong><br>
-・<strong>localhost</strong>はコンピュータ自信を指す特別なホスト名<br>
-・IPアドレスに置き換えると127.0.0.1と同じ<br>
-・<strong>8080</strong>はポート番号<br>
+🌷 <strong>Intellij起動</strong>して、<br>
+🌷 <span style="color:deeppink">Sendを押すと</span><br>
+🌷 <span style="color:purple">200</span>と表示されるとOKです   <br>
+🌷 <strong><span style="color:yellowgreen">localhost:8080</span></strong></p>
+<ul>
+<li><strong>localhost</strong>はコンピュータ自信を指す特別なホスト名</li>
+<li>IPアドレスに置き換えると127.0.0.1と同じ</li>
+<li><strong>8080</strong>はポート番号<br>
 <img src="https://amika11071107.github.io/images/postman6.png" alt="images">
-<strong>AccountRest.java</strong><br>
+<strong>AccountRest.java</strong> (Intellij IDEA)<br>
 POSTは、@Consumesがいる
-<img src="https://amika11071107.github.io/images/post1.png" alt="images"></p>
+<img src="https://amika11071107.github.io/images/post1.png" alt="images"></li>
+</ul>
 <h2 id="get">GET</h2>
 <p><span style="color:yellowgreen">{ここに</span><span style="color:green">accountId</span><span style="color:yellowgreen">入れる}。</span><br>
 下は<span style="color:deeppink">token</span>だけ
 <img src="https://amika11071107.github.io/images/postman7.png" alt="images"><br>
 <em>今はまだ何も情報を入れていないから、返ってくる<span style="color:purple">introduction は null</span> になっている</em></p>
-<p><strong>AccountRest.java</strong><br>
+<p><strong>AccountRest.java</strong>
 <img src="https://amika11071107.github.io/images/get1.png" alt="images">
 AccountManager.java</p>
 <p><img src="https://amika11071107.github.io/images/amga.png" alt="images"><br>
@@ -403,7 +432,7 @@ AccountManager.java</p>
   >
     
     <a class="ltr:pr-3 rtl:pl-3" href="https://amika11071107.github.io/post/intellij_idea/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Intellij</span></a
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Intellij IDEA</span></a
     >
     
     

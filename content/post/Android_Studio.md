@@ -7,305 +7,359 @@ description = "Guide to emoji usage in Hugo"
 
 
 手順を説明します🐘  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 NewProjectを押します  
 ![images](/images/app1.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Empty Views Activity を押します  
 ![images](/images/app2.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Nameにタイトルを入力  
 🌷 Build configuration languageをKotlinにする  
 🌷 Minimum SDKを API30 にする  
 ![images](/images/app3.png)  
-・  
-・  
-・  
+
+-  
+-  
+-   
 🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます  
 ![images](/images/app4.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します  
 🌷 ＞をクリックしていきます
 ![images](/images/app5.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Androidでは画面のことをActivityといいます  
 🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります   
 🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。   
 🌷 次に、activity_main.xml を押しましょう
 
 ![images](/images/app6.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷このxmlでは、一つの画面のレイアウトをいじります。（後で戻ってくるので理解はざっくりでok）
 ![images](/images/app7.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 プロジェクト全体をコンパイルすることをビルドといいます  
 （コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）  
 🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています。  
 🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます。  
 🌷 それでは、build.gradle.kts をあけます。  
 ![images](/images/app8.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 retrofitをダウンロードできるように以下を追加します。  
 🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます。
 ![images](/images/app55.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に MainActivity の名前を SignUpActivity に変えます。  
 🌷 figmaでは３つの画面を作りましたね   
 🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します。
 ![images](/images/app56.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します。
 ![images](/images/app11.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 すると以下の画面が出てくるので、figmaに設定したのと同じ名前（にしたら分かりやすい）に変更します。  
 ～単語の先頭は大文字にするのが一般的～  
 ![images](/images/app12.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 同じように、レイアウトの名前も分かりやすいように変えます。
 ![images](/images/app13.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷mainの部分をsign_upなどと分かりやすいように変えます。  
 ～単語の先頭は小文字にし、大文字の前に_を入れるのが一般的（画像は_が入ってないけど無視してください）～  
 ![images](/images/app14.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります。   
 🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます。  
 ![images](/images/app15.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 まず、viewsパッケージを作ります。
 ![images](/images/app16.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷viewsというPackageにSignUpActivityをドラック＆ドロップする。（viewの中に入れる）
 ![images](/images/app17.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Refactorを押す  
 ![images](/images/app18.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです。  
 🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す。
 ![images](/images/app20.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます。
 ![images](/images/app21.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 modelパッケージの中にはAccount.javaを作ります。
 ![images](/images/app23.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Accountと入力
 ![images](/images/app24.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける  
 🌷 ↓はIntelij
 ![images](/images/app80.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。  
 🌷 com.example.lessonを右クリックする。
 ![images](/images/app25.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 restと入力
 ![images](/images/app26.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 restパッケージの中にはAccountRest.javaを作る
 ![images](/images/app27.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 AccountRestと入力し、Interfaceを選択する
 ![images](/images/app28.png)
-・  
-・  
-・  
+
+-  
+-  
+-    
 🌷 作られました(o^―^o)ﾆｺ
 ![images](/images/app29.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 ここでは、IntellijのAccountRestと対応するように書いていく  
 🌷 IntelijではFormParamと書かれているがAndroidStudioではFieldと書く
 ![images](/images/app85.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 activity.sign_up_xmlで画面が小さいなぁって思ったら、ctrl押しながらカーソルころころすると、
 ![images](/images/app30.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 アップできます(o^―^o)ﾆｺ
 ![images](/images/app31.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 左側のButtonやTextBoxを引っ張ってきて配置できるので、  
 ![images](/images/app32.png)
-・  
-・  
-・  
+
+-  
+-  
+-   
 🌷 figma参考にしながらこのような画面を作る
 ![images](/images/app33.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Buttonを選択しているとき、右のtextでRegisterと打ち、Enterを押すと、  
 ![images](/images/app34.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 ボタンにはRegisterと表示される  
 🌷 右のidにはRegisterbuttonなどと入力しておく。（後で使う）
 ![images](/images/app35.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に、ボタンやテキストは、選択したときに出てくる青い点を縦横右左に引っ張って、端にくっつける
 ![images](/images/app36.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 くっつけた状態で配置したい位置に配置する  
 ![images](/images/app37.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 テキストボックスも同じようにtextをSignUpに変え、idもSignUpなどとし、Refactorを押す  
 ![images](/images/app38.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 このようになっていたらOK
 ![images](/images/app39.png) 
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 acitvity_sign_up.xmlの、Codeの方を選ぶと、このようなコードが書かれている  
 🌷 以下の部分でSignUpのテキストのことが書かれている  
 🌷 以下のように android:textAlignment="center"を入れると、右でも左でもなく真ん中に来てくれる  
 ![images](/images/app40.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 android:textColor="#000000"  色が黒にできる  
 🌷 android:textSize="38sp"  テキストのサイズを調節できる  
 🌷 android:textStyle="bold"  文字が太くなる
 ![images](/images/app42.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 Designに戻るとこんな風に表示される
 ![images](/images/app43.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 ここはmatch_parentにする
 ![images](/images/app44.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に入力画面を作りたいとき、Text の Plain Text を画面に引っ張ってくる
 ![images](/images/app45.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 android:hint=" Username" 薄く入力内容のヒントを書くときこのように書く  
 🌷 textは消す  
 ![images](/images/app48.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 UsernameとPasswordそれぞれにidを設定し、壁に固定して、以下のようになるとOK
 ![images](/images/app50.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 空のテキストボックスも作る。これはエラーを表示させる場所。idも設定する
 ![images](/images/app53.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に、SettingActivityを作りたい  
 ![images](/images/app33.png)
-・  
-・  
-・   
+
+-  
+-  
+-   
 🌷 SignUpActivityを選択した状態で、File → New Activity → Empty Views Activityを押す  
 🌷 この作り方だと、javaファイルだけでなく、xmlファイルも同時に作ってくれる👏	　　
 ![images](/images/app57.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 同時にAccountsListActivityも作る  
 🌷 以下のようになれば正解  
 ![images](/images/app81.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 activity_settings.xmlをfigmaを見ながら作る
 ![images](/images/app33.png)
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 パスワード変更のボタンを忘れていたので少しレイアウトが変わりました笑  
 🌷 こちらを見よう見まねで作ってみましょう  
 ![images](/images/app86.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に、SignUpActivityに戻り、registerボタンを押すとSettings画面に遷移するようにする  
 🌷 最初はこのようになっているはずだが、少なかったら以下のようにする
 ![images](/images/app64.png)  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 以下のコードを追加する   
 ![images](/images/app65.png) 
 
@@ -320,9 +374,10 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 🌷 button_register：  
 取得したボタンを操作するために button_register という名前の変数に代入しています。
 この変数を使ってボタンに機能を追加します。
-・  
-・  
-・  
+
+-  
+-  
+-   
 ```java
 button_register.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -352,33 +407,37 @@ onClick メソッドをオーバーライドしています。
 
 Intent は、Android でアクティビティ（画面）間の通信を行う仕組みです。このコードでは、現在のアクティビティ（CurrentActivity）から別のアクティビティ（LoginActivity）に遷移するための指示を Intent を使って作成しています。
 
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 赤くなっている部分をなくすために以下のようにimport文を追加する
 
 ![images](/images/app66.png)  
 
 🌷 動かす仮想マシーンを選択する  
 ![images](/images/app67.png)  
-・  
-・  
-・ 
+
+-  
+-  
+-  
 ![images](/images/app88.png) 
 🌷 これで実行▷を押し、ユーザーネームなどは触らず、Registerボタンの押し、Settings画面に遷移するとOK
 ![images](/images/app82.png)
-・  
-・  
-・    
+
+-  
+-  
+-   
 🌷 次に、サーバー（intellij）と通信できるようにするコードを追加し、SignUp時に、account_idとpasswordをサーバに保存してもらえるようにする  
 🌷 まず、以下を書く
 ![images](/images/app83.png)
 🌷 AccountsRest accountsRest = retrofit.create(AccountsRest.class);  
 🌷 この行を書くことで   
 🌷 accountsRest を使うと、サーバーにデータを送る、サーバーからデータを受け取るといった通信処理を簡単に書けるようになります。  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に以下を書く  
 🌷 ボタンがクリックされたときに、editidという変数は場所を示す情報が入っており、getTextを使ってaccount_idという変数にはidが取得される  
 🌷 パスワードも同様にpasswordという変数にidが取得される  
@@ -388,9 +447,10 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 🌷 Call<Void> call = accountsRest.signup(account_id, password); は、  
 🌷 AccountRestのCall<void> signupの書き方とそろえる  
 🌷 サーバーに「account_id と password を使って、新しいアカウントを作成してください！」とお願いする準備をしています。  
-・  
-・  
-・  
+
+-  
+-  
+-  
 ```java
  call.enqueue(new Callback<Void>() {  // call.enqueueはリクエストをサーバーに送るよ！結果が返ってきたらこれをやってね」という動きを設定します。
           @Override  // 元々用意された『onResponse』の動きを上書きして自分で作り直してますよ！」とプログラムに伝える。
@@ -411,9 +471,10 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
  
 
 🌷 以上のコードを書くと、サインアップができるようになったので実行を押す  
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 次に、Setting画面に現在のパスワードと新しいパスワードを正しく入力すると変更されるように以下の場所にコードを書いていきます  
 ![images](/images/app84.png) 
 🌷 以下のコードをonCreateメソッド内に書いてください  
@@ -477,9 +538,10 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 
     });
 ```
-・  
-・  
-・  
+
+-  
+-  
+-  
 🌷 AccountListActivityにも以下をonCreate内に追加します
  
 ```java

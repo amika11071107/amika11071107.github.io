@@ -57,305 +57,71 @@
   
   
   <meta name="description" content="手順を説明します🐘
-・
-・
-・
+
+
+
+
+
 🌷 NewProjectを押します
 
-・
-・
-・
+
+
+
+
+
 🌷 Empty Views Activity を押します
 
-・
-・
-・
+
+
+
+
+
 🌷 Nameにタイトルを入力
 🌷 Build configuration languageをKotlinにする
 🌷 Minimum SDKを API30 にする
 
-・
-・
-・
+
+
+
+
+
 🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます
 
-・
-・
-・
+
+
+
+
+
 🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します
 🌷 ＞をクリックしていきます
 
-・
-・
-・
+
+
+
+
+
 🌷 Androidでは画面のことをActivityといいます
 🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります
 🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。
 🌷 次に、activity_main.xml を押しましょう
 
-・
-・
-・
+
+
+
+
+
 🌷このxmlでは、一つの画面のレイアウトをいじります。（後で戻ってくるので理解はざっくりでok）
 
-・
-・
-・
+
+
+
+
+
 🌷 プロジェクト全体をコンパイルすることをビルドといいます
 （コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）
 🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています。
 🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます。
 🌷 それでは、build.gradle.kts をあけます。
-
-・
-・
-・
-🌷 retrofitをダウンロードできるように以下を追加します。
-🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます。
-
-・
-・
-・
-🌷 次に MainActivity の名前を SignUpActivity に変えます。
-🌷 figmaでは３つの画面を作りましたね
-🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します。
-
-・
-・
-・
-🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します。
-
-・
-・
-・
-🌷 すると以下の画面が出てくるので、figmaに設定したのと同じ名前（にしたら分かりやすい）に変更します。
-～単語の先頭は大文字にするのが一般的～
-
-・
-・
-・
-🌷 同じように、レイアウトの名前も分かりやすいように変えます。
-
-・
-・
-・
-🌷mainの部分をsign_upなどと分かりやすいように変えます。
-～単語の先頭は小文字にし、大文字の前に_を入れるのが一般的（画像は_が入ってないけど無視してください）～
-
-・
-・
-・
-🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります。
-🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます。
-
-・
-・
-・
-🌷 まず、viewsパッケージを作ります。
-
-・
-・
-・
-🌷viewsというPackageにSignUpActivityをドラック＆ドロップする。（viewの中に入れる）
-
-・
-・
-・
-🌷 Refactorを押す
-
-・
-・
-・
-🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです。
-🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す。
-
-・
-・
-・
-🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます。
-
-・
-・
-・
-🌷 modelパッケージの中にはAccount.javaを作ります。
-
-・
-・
-・
-🌷 Accountと入力
-
-・
-・
-・
-🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける
-🌷 ↓はIntelij
-
-・
-・
-・
-🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。
-🌷 com.example.lessonを右クリックする。
-
-・
-・
-・
-🌷 restと入力
-
-・
-・
-・
-🌷 restパッケージの中にはAccountRest.javaを作る
-
-・
-・
-・
-🌷 AccountRestと入力し、Interfaceを選択する
-
-・
-・
-・
-🌷 作られました(o^―^o)ﾆｺ
-
-・
-・
-・
-🌷 ここでは、IntellijのAccountRestと対応するように書いていく
-🌷 IntelijではFormParamと書かれているがAndroidStudioではFieldと書く
-
-・
-・
-・
-🌷 activity.sign_up_xmlで画面が小さいなぁって思ったら、ctrl押しながらカーソルころころすると、
-
-・
-・
-・
-🌷 アップできます(o^―^o)ﾆｺ
-
-・
-・
-・
-🌷 左側のButtonやTextBoxを引っ張ってきて配置できるので、
-
-・
-・
-・
-🌷 figma参考にしながらこのような画面を作る
-
-・
-・
-・
-🌷 Buttonを選択しているとき、右のtextでRegisterと打ち、Enterを押すと、
-
-・
-・
-・
-🌷 ボタンにはRegisterと表示される
-🌷 右のidにはRegisterbuttonなどと入力しておく。（後で使う）
-
-・
-・
-・
-🌷 次に、ボタンやテキストは、選択したときに出てくる青い点を縦横右左に引っ張って、端にくっつける
-
-・
-・
-・
-🌷 くっつけた状態で配置したい位置に配置する
-
-・
-・
-・
-🌷 テキストボックスも同じようにtextをSignUpに変え、idもSignUpなどとし、Refactorを押す
-
-・
-・
-・
-🌷 このようになっていたらOK
-
-・
-・
-・
-🌷 acitvity_sign_up.xmlの、Codeの方を選ぶと、このようなコードが書かれている
-🌷 以下の部分でSignUpのテキストのことが書かれている
-🌷 以下のように android:textAlignment=&ldquo;center&quot;を入れると、右でも左でもなく真ん中に来てくれる
-
-・
-・
-・
-🌷 android:textColor=&quot;#000000&rdquo;  色が黒にできる
-🌷 android:textSize=&ldquo;38sp&rdquo;  テキストのサイズを調節できる
-🌷 android:textStyle=&ldquo;bold&rdquo;  文字が太くなる
-
-・
-・
-・
-🌷 Designに戻るとこんな風に表示される
-
-・
-・
-・
-🌷 ここはmatch_parentにする
-
-・
-・
-・
-🌷 次に入力画面を作りたいとき、Text の Plain Text を画面に引っ張ってくる
-
-・
-・
-・
-🌷 android:hint=&quot; Username&quot; 薄く入力内容のヒントを書くときこのように書く
-🌷 textは消す
-
-・
-・
-・
-🌷 UsernameとPasswordそれぞれにidを設定し、壁に固定して、以下のようになるとOK
-
-・
-・
-・
-🌷 空のテキストボックスも作る。これはエラーを表示させる場所。idも設定する
-
-・
-・
-・
-🌷 次に、SettingActivityを作りたい
-
-・
-・
-・
-🌷 SignUpActivityを選択した状態で、File → New Activity → Empty Views Activityを押す
-🌷 この作り方だと、javaファイルだけでなく、xmlファイルも同時に作ってくれる👏	　　
-
-・
-・
-・
-🌷 同時にAccountsListActivityも作る
-🌷 以下のようになれば正解
-
-・
-・
-・
-🌷 activity_settings.xmlをfigmaを見ながら作る
-
-・
-・
-・
-🌷 パスワード変更のボタンを忘れていたので少しレイアウトが変わりました笑
-🌷 こちらを見よう見まねで作ってみましょう
-
-・
-・
-・
-🌷 次に、SignUpActivityに戻り、registerボタンを押すとSettings画面に遷移するようにする
-🌷 最初はこのようになっているはずだが、少なかったら以下のようにする
-
-・
-・
-・
-🌷 以下のコードを追加する
 " />
   <meta name="author" content="←この日付無視してね" />
   
@@ -421,7 +187,7 @@
   <meta itemprop="description" content="Guide to emoji usage in Hugo">
   <meta itemprop="datePublished" content="2019-03-05T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-03-05T00:00:00+00:00">
-  <meta itemprop="wordCount" content="734">
+  <meta itemprop="wordCount" content="548">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/android_studio/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
@@ -547,306 +313,414 @@
     
   </header>
 
-  <section><p>手順を説明します🐘<br>
-・<br>
-・<br>
-・<br>
-🌷 NewProjectを押します<br>
-<img src="https://amika11071107.github.io/images/app1.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 Empty Views Activity を押します<br>
-<img src="https://amika11071107.github.io/images/app2.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 Nameにタイトルを入力<br>
+  <section><p>手順を説明します🐘</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 NewProjectを押します<br>
+<img src="https://amika11071107.github.io/images/app1.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Empty Views Activity を押します<br>
+<img src="https://amika11071107.github.io/images/app2.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Nameにタイトルを入力<br>
 🌷 Build configuration languageをKotlinにする<br>
 🌷 Minimum SDKを API30 にする<br>
-<img src="https://amika11071107.github.io/images/app3.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます<br>
-<img src="https://amika11071107.github.io/images/app4.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します<br>
+<img src="https://amika11071107.github.io/images/app3.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます<br>
+<img src="https://amika11071107.github.io/images/app4.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します<br>
 🌷 ＞をクリックしていきます
-<img src="https://amika11071107.github.io/images/app5.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 Androidでは画面のことをActivityといいます<br>
+<img src="https://amika11071107.github.io/images/app5.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Androidでは画面のことをActivityといいます<br>
 🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります<br>
 🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。<br>
 🌷 次に、activity_main.xml を押しましょう</p>
-<p><img src="https://amika11071107.github.io/images/app6.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷このxmlでは、一つの画面のレイアウトをいじります。（後で戻ってくるので理解はざっくりでok）
-<img src="https://amika11071107.github.io/images/app7.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 プロジェクト全体をコンパイルすることをビルドといいます<br>
+<p><img src="https://amika11071107.github.io/images/app6.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷このxmlでは、一つの画面のレイアウトをいじります。（後で戻ってくるので理解はざっくりでok）
+<img src="https://amika11071107.github.io/images/app7.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 プロジェクト全体をコンパイルすることをビルドといいます<br>
 （コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）<br>
 🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています。<br>
 🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます。<br>
 🌷 それでは、build.gradle.kts をあけます。<br>
-<img src="https://amika11071107.github.io/images/app8.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 retrofitをダウンロードできるように以下を追加します。<br>
+<img src="https://amika11071107.github.io/images/app8.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 retrofitをダウンロードできるように以下を追加します。<br>
 🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます。
-<img src="https://amika11071107.github.io/images/app55.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 次に MainActivity の名前を SignUpActivity に変えます。<br>
+<img src="https://amika11071107.github.io/images/app55.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に MainActivity の名前を SignUpActivity に変えます。<br>
 🌷 figmaでは３つの画面を作りましたね<br>
 🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します。
-<img src="https://amika11071107.github.io/images/app56.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します。
-<img src="https://amika11071107.github.io/images/app11.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 すると以下の画面が出てくるので、figmaに設定したのと同じ名前（にしたら分かりやすい）に変更します。<br>
+<img src="https://amika11071107.github.io/images/app56.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します。
+<img src="https://amika11071107.github.io/images/app11.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 すると以下の画面が出てくるので、figmaに設定したのと同じ名前（にしたら分かりやすい）に変更します。<br>
 ～単語の先頭は大文字にするのが一般的～<br>
-<img src="https://amika11071107.github.io/images/app12.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 同じように、レイアウトの名前も分かりやすいように変えます。
-<img src="https://amika11071107.github.io/images/app13.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷mainの部分をsign_upなどと分かりやすいように変えます。<br>
+<img src="https://amika11071107.github.io/images/app12.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 同じように、レイアウトの名前も分かりやすいように変えます。
+<img src="https://amika11071107.github.io/images/app13.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷mainの部分をsign_upなどと分かりやすいように変えます。<br>
 ～単語の先頭は小文字にし、大文字の前に_を入れるのが一般的（画像は_が入ってないけど無視してください）～<br>
-<img src="https://amika11071107.github.io/images/app14.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります。<br>
+<img src="https://amika11071107.github.io/images/app14.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります。<br>
 🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます。<br>
-<img src="https://amika11071107.github.io/images/app15.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 まず、viewsパッケージを作ります。
-<img src="https://amika11071107.github.io/images/app16.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷viewsというPackageにSignUpActivityをドラック＆ドロップする。（viewの中に入れる）
-<img src="https://amika11071107.github.io/images/app17.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 Refactorを押す<br>
-<img src="https://amika11071107.github.io/images/app18.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです。<br>
+<img src="https://amika11071107.github.io/images/app15.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 まず、viewsパッケージを作ります。
+<img src="https://amika11071107.github.io/images/app16.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷viewsというPackageにSignUpActivityをドラック＆ドロップする。（viewの中に入れる）
+<img src="https://amika11071107.github.io/images/app17.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Refactorを押す<br>
+<img src="https://amika11071107.github.io/images/app18.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです。<br>
 🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す。
-<img src="https://amika11071107.github.io/images/app20.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます。
-<img src="https://amika11071107.github.io/images/app21.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 modelパッケージの中にはAccount.javaを作ります。
-<img src="https://amika11071107.github.io/images/app23.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 Accountと入力
-<img src="https://amika11071107.github.io/images/app24.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける<br>
+<img src="https://amika11071107.github.io/images/app20.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます。
+<img src="https://amika11071107.github.io/images/app21.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 modelパッケージの中にはAccount.javaを作ります。
+<img src="https://amika11071107.github.io/images/app23.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Accountと入力
+<img src="https://amika11071107.github.io/images/app24.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける<br>
 🌷 ↓はIntelij
-<img src="https://amika11071107.github.io/images/app80.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。<br>
+<img src="https://amika11071107.github.io/images/app80.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。<br>
 🌷 com.example.lessonを右クリックする。
-<img src="https://amika11071107.github.io/images/app25.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 restと入力
-<img src="https://amika11071107.github.io/images/app26.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 restパッケージの中にはAccountRest.javaを作る
-<img src="https://amika11071107.github.io/images/app27.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 AccountRestと入力し、Interfaceを選択する
-<img src="https://amika11071107.github.io/images/app28.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 作られました(o^―^o)ﾆｺ
-<img src="https://amika11071107.github.io/images/app29.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 ここでは、IntellijのAccountRestと対応するように書いていく<br>
+<img src="https://amika11071107.github.io/images/app25.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 restと入力
+<img src="https://amika11071107.github.io/images/app26.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 restパッケージの中にはAccountRest.javaを作る
+<img src="https://amika11071107.github.io/images/app27.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 AccountRestと入力し、Interfaceを選択する
+<img src="https://amika11071107.github.io/images/app28.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 作られました(o^―^o)ﾆｺ
+<img src="https://amika11071107.github.io/images/app29.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 ここでは、IntellijのAccountRestと対応するように書いていく<br>
 🌷 IntelijではFormParamと書かれているがAndroidStudioではFieldと書く
-<img src="https://amika11071107.github.io/images/app85.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 activity.sign_up_xmlで画面が小さいなぁって思ったら、ctrl押しながらカーソルころころすると、
-<img src="https://amika11071107.github.io/images/app30.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 アップできます(o^―^o)ﾆｺ
-<img src="https://amika11071107.github.io/images/app31.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 左側のButtonやTextBoxを引っ張ってきて配置できるので、<br>
-<img src="https://amika11071107.github.io/images/app32.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 figma参考にしながらこのような画面を作る
-<img src="https://amika11071107.github.io/images/app33.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 Buttonを選択しているとき、右のtextでRegisterと打ち、Enterを押すと、<br>
-<img src="https://amika11071107.github.io/images/app34.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 ボタンにはRegisterと表示される<br>
+<img src="https://amika11071107.github.io/images/app85.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 activity.sign_up_xmlで画面が小さいなぁって思ったら、ctrl押しながらカーソルころころすると、
+<img src="https://amika11071107.github.io/images/app30.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 アップできます(o^―^o)ﾆｺ
+<img src="https://amika11071107.github.io/images/app31.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 左側のButtonやTextBoxを引っ張ってきて配置できるので、<br>
+<img src="https://amika11071107.github.io/images/app32.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 figma参考にしながらこのような画面を作る
+<img src="https://amika11071107.github.io/images/app33.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Buttonを選択しているとき、右のtextでRegisterと打ち、Enterを押すと、<br>
+<img src="https://amika11071107.github.io/images/app34.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 ボタンにはRegisterと表示される<br>
 🌷 右のidにはRegisterbuttonなどと入力しておく。（後で使う）
-<img src="https://amika11071107.github.io/images/app35.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 次に、ボタンやテキストは、選択したときに出てくる青い点を縦横右左に引っ張って、端にくっつける
-<img src="https://amika11071107.github.io/images/app36.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 くっつけた状態で配置したい位置に配置する<br>
-<img src="https://amika11071107.github.io/images/app37.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 テキストボックスも同じようにtextをSignUpに変え、idもSignUpなどとし、Refactorを押す<br>
-<img src="https://amika11071107.github.io/images/app38.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 このようになっていたらOK
-<img src="https://amika11071107.github.io/images/app39.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 acitvity_sign_up.xmlの、Codeの方を選ぶと、このようなコードが書かれている<br>
+<img src="https://amika11071107.github.io/images/app35.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、ボタンやテキストは、選択したときに出てくる青い点を縦横右左に引っ張って、端にくっつける
+<img src="https://amika11071107.github.io/images/app36.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 くっつけた状態で配置したい位置に配置する<br>
+<img src="https://amika11071107.github.io/images/app37.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 テキストボックスも同じようにtextをSignUpに変え、idもSignUpなどとし、Refactorを押す<br>
+<img src="https://amika11071107.github.io/images/app38.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 このようになっていたらOK
+<img src="https://amika11071107.github.io/images/app39.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 acitvity_sign_up.xmlの、Codeの方を選ぶと、このようなコードが書かれている<br>
 🌷 以下の部分でSignUpのテキストのことが書かれている<br>
 🌷 以下のように android:textAlignment=&ldquo;center&quot;を入れると、右でも左でもなく真ん中に来てくれる<br>
-<img src="https://amika11071107.github.io/images/app40.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 android:textColor=&quot;#000000&rdquo;  色が黒にできる<br>
+<img src="https://amika11071107.github.io/images/app40.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 android:textColor=&quot;#000000&rdquo;  色が黒にできる<br>
 🌷 android:textSize=&ldquo;38sp&rdquo;  テキストのサイズを調節できる<br>
 🌷 android:textStyle=&ldquo;bold&rdquo;  文字が太くなる
-<img src="https://amika11071107.github.io/images/app42.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 Designに戻るとこんな風に表示される
-<img src="https://amika11071107.github.io/images/app43.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 ここはmatch_parentにする
-<img src="https://amika11071107.github.io/images/app44.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 次に入力画面を作りたいとき、Text の Plain Text を画面に引っ張ってくる
-<img src="https://amika11071107.github.io/images/app45.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 android:hint=&quot; Username&quot; 薄く入力内容のヒントを書くときこのように書く<br>
+<img src="https://amika11071107.github.io/images/app42.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Designに戻るとこんな風に表示される
+<img src="https://amika11071107.github.io/images/app43.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 ここはmatch_parentにする
+<img src="https://amika11071107.github.io/images/app44.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に入力画面を作りたいとき、Text の Plain Text を画面に引っ張ってくる
+<img src="https://amika11071107.github.io/images/app45.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 android:hint=&quot; Username&quot; 薄く入力内容のヒントを書くときこのように書く<br>
 🌷 textは消す<br>
-<img src="https://amika11071107.github.io/images/app48.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 UsernameとPasswordそれぞれにidを設定し、壁に固定して、以下のようになるとOK
-<img src="https://amika11071107.github.io/images/app50.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 空のテキストボックスも作る。これはエラーを表示させる場所。idも設定する
-<img src="https://amika11071107.github.io/images/app53.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 次に、SettingActivityを作りたい<br>
-<img src="https://amika11071107.github.io/images/app33.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 SignUpActivityを選択した状態で、File → New Activity → Empty Views Activityを押す<br>
+<img src="https://amika11071107.github.io/images/app48.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 UsernameとPasswordそれぞれにidを設定し、壁に固定して、以下のようになるとOK
+<img src="https://amika11071107.github.io/images/app50.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 空のテキストボックスも作る。これはエラーを表示させる場所。idも設定する
+<img src="https://amika11071107.github.io/images/app53.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、SettingActivityを作りたい<br>
+<img src="https://amika11071107.github.io/images/app33.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 SignUpActivityを選択した状態で、File → New Activity → Empty Views Activityを押す<br>
 🌷 この作り方だと、javaファイルだけでなく、xmlファイルも同時に作ってくれる👏	　　
-<img src="https://amika11071107.github.io/images/app57.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 同時にAccountsListActivityも作る<br>
+<img src="https://amika11071107.github.io/images/app57.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 同時にAccountsListActivityも作る<br>
 🌷 以下のようになれば正解<br>
-<img src="https://amika11071107.github.io/images/app81.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 activity_settings.xmlをfigmaを見ながら作る
-<img src="https://amika11071107.github.io/images/app33.png" alt="images">
-・<br>
-・<br>
-・<br>
-🌷 パスワード変更のボタンを忘れていたので少しレイアウトが変わりました笑<br>
+<img src="https://amika11071107.github.io/images/app81.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 activity_settings.xmlをfigmaを見ながら作る
+<img src="https://amika11071107.github.io/images/app33.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 パスワード変更のボタンを忘れていたので少しレイアウトが変わりました笑<br>
 🌷 こちらを見よう見まねで作ってみましょう<br>
-<img src="https://amika11071107.github.io/images/app86.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 次に、SignUpActivityに戻り、registerボタンを押すとSettings画面に遷移するようにする<br>
+<img src="https://amika11071107.github.io/images/app86.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、SignUpActivityに戻り、registerボタンを押すとSettings画面に遷移するようにする<br>
 🌷 最初はこのようになっているはずだが、少なかったら以下のようにする
-<img src="https://amika11071107.github.io/images/app64.png" alt="images"><br>
-・<br>
-・<br>
-・<br>
-🌷 以下のコードを追加する<br>
+<img src="https://amika11071107.github.io/images/app64.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 以下のコードを追加する<br>
 <img src="https://amika11071107.github.io/images/app65.png" alt="images"></p>
 <p>🌷 findViewByIdメソッド：<br>
 XMLレイアウトファイルで定義されたボタンのIDを取得します</p>
@@ -855,10 +729,12 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 これは、findViewById が View 型を返すためです。</p>
 <p>🌷 button_register：<br>
 取得したボタンを操作するために button_register という名前の変数に代入しています。
-この変数を使ってボタンに機能を追加します。
-・<br>
-・<br>
-・</p>
+この変数を使ってボタンに機能を追加します。</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>button_register.<span style="color:#a6e22e">setOnClickListener</span>(<span style="color:#66d9ef">new</span> View.<span style="color:#a6e22e">OnClickListener</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span>(View view) {
@@ -877,41 +753,51 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 引数 view は、クリックされたビュー（この場合は button_register）を指します。</p>
 <p>🌷 Intent:</p>
 <p>Intent は、Android でアクティビティ（画面）間の通信を行う仕組みです。このコードでは、現在のアクティビティ（CurrentActivity）から別のアクティビティ（LoginActivity）に遷移するための指示を Intent を使って作成しています。</p>
-<p>・<br>
-・<br>
-・<br>
-🌷 赤くなっている部分をなくすために以下のようにimport文を追加する</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 赤くなっている部分をなくすために以下のようにimport文を追加する</p>
 <p><img src="https://amika11071107.github.io/images/app66.png" alt="images"></p>
 <p>🌷 動かす仮想マシーンを選択する<br>
-<img src="https://amika11071107.github.io/images/app67.png" alt="images"><br>
-・<br>
-・<br>
-・
-<img src="https://amika11071107.github.io/images/app88.png" alt="images">
+<img src="https://amika11071107.github.io/images/app67.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p><img src="https://amika11071107.github.io/images/app88.png" alt="images">
 🌷 これで実行▷を押し、ユーザーネームなどは触らず、Registerボタンの押し、Settings画面に遷移するとOK
-<img src="https://amika11071107.github.io/images/app82.png" alt="images">
-・<br>
-・<br>
-・ <br>
-🌷 次に、サーバー（intellij）と通信できるようにするコードを追加し、SignUp時に、account_idとpasswordをサーバに保存してもらえるようにする<br>
+<img src="https://amika11071107.github.io/images/app82.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、サーバー（intellij）と通信できるようにするコードを追加し、SignUp時に、account_idとpasswordをサーバに保存してもらえるようにする<br>
 🌷 まず、以下を書く
 <img src="https://amika11071107.github.io/images/app83.png" alt="images">
 🌷 AccountsRest accountsRest = retrofit.create(AccountsRest.class);<br>
 🌷 この行を書くことで<br>
-🌷 accountsRest を使うと、サーバーにデータを送る、サーバーからデータを受け取るといった通信処理を簡単に書けるようになります。<br>
-・<br>
-・<br>
-・<br>
-🌷 次に以下を書く<br>
+🌷 accountsRest を使うと、サーバーにデータを送る、サーバーからデータを受け取るといった通信処理を簡単に書けるようになります。</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に以下を書く<br>
 🌷 ボタンがクリックされたときに、editidという変数は場所を示す情報が入っており、getTextを使ってaccount_idという変数にはidが取得される<br>
 🌷 パスワードも同様にpasswordという変数にidが取得される</p>
 <p><img src="https://amika11071107.github.io/images/app84.png" alt="images">
 🌷 Call<!-- raw HTML omitted --> call = accountsRest.signup(account_id, password); は、<br>
 🌷 AccountRestのCall<!-- raw HTML omitted --> signupの書き方とそろえる<br>
-🌷 サーバーに「account_id と password を使って、新しいアカウントを作成してください！」とお願いする準備をしています。<br>
-・<br>
-・<br>
-・</p>
+🌷 サーバーに「account_id と password を使って、新しいアカウントを作成してください！」とお願いする準備をしています。</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> call.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {  <span style="color:#75715e">// call.enqueueはリクエストをサーバーに送るよ！結果が返ってきたらこれをやってね」という動きを設定します。</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">@Override</span>  <span style="color:#75715e">// 元々用意された『onResponse』の動きを上書きして自分で作り直してますよ！」とプログラムに伝える。</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span>(Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> call, Response<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> response) {  <span style="color:#75715e">// サーバーから返事が返ってきた場合に呼ばれる。</span>
@@ -927,11 +813,13 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 </span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;!!!&#34;</span>);  <span style="color:#75715e">// コンソールに!!!と表示（Android画面ではない）</span>
 </span></span><span style="display:flex;"><span>          }
 </span></span><span style="display:flex;"><span>        });
-</span></span></code></pre></div><p>🌷 以上のコードを書くと、サインアップができるようになったので実行を押す<br>
-・<br>
-・<br>
-・<br>
-🌷 次に、Setting画面に現在のパスワードと新しいパスワードを正しく入力すると変更されるように以下の場所にコードを書いていきます<br>
+</span></span></code></pre></div><p>🌷 以上のコードを書くと、サインアップができるようになったので実行を押す</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、Setting画面に現在のパスワードと新しいパスワードを正しく入力すると変更されるように以下の場所にコードを書いていきます<br>
 <img src="https://amika11071107.github.io/images/app84.png" alt="images">
 🌷 以下のコードをonCreateメソッド内に書いてください<br>
 🌷 ほとんどSignUpActivutyの応用なのでなにが書いてあるか読んでみましょう</p>
@@ -991,10 +879,12 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    });
-</span></span></code></pre></div><p>・<br>
-・<br>
-・<br>
-🌷 AccountListActivityにも以下をonCreate内に追加します</p>
+</span></span></code></pre></div><ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 AccountListActivityにも以下をonCreate内に追加します</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//通信の初期化</span>
 </span></span><span style="display:flex;"><span>    Retrofit retrofit <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>()
 </span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;http://10.0.2.2:8080/&#34;</span>)

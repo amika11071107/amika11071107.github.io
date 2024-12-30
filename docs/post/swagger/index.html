@@ -56,68 +56,59 @@
   
   
   
-  <meta name="description" content="コードを書く前に、何のデータをどんな形で送るのか、アカウントがなかったらどのようなエラーを出すか（404？401？)を決めてここに記し、コードを書くときにはSwaggerを見ながら書きます。
-📚 参考サイト
-swagger editor
-以下は、Swagger editor (左) と Swagger UI (右) です
-これを書いていきます（DELETE以外）
-Try our new Editorを押して、左のコードを全部消し、下の画像や次の説明をコピペしながら、UIと比べて理解していきましょう
+  <meta name="description" content="📚 swagger editor
 
+↑まずはここをクリック
 
+🌞 Swaggerとは
+🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします
+1. パスとは何か？
+🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
 
+住所（パス）: localhost:8080/citrus/accounts
+意味: 「アカウントの情報がある場所」
+これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。
 
-右のSwagger UIと照らして見ていくと、、
+2. 操作（HTTPメソッド）と組み合わせる
+🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
 
-openapi: 3.0.3
+GET: データを取得する（見るだけ）
+POST: 新しいデータを追加する（作る）
+PUT: データを更新する（書き換える）
+DELETE: データを削除する（消す）
 
-info:
-  title: Citrus - OpenAPI 3.0  
-  version: 1.0.0 
+3. 実際の例で説明
+🌷 アカウント一覧を見る
 
-  description: |-
-    bookチーム-分担1とか      
-🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。
-🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。
+パス：localhost:8080/citrus/accounts
+メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます
 
+🌷 新しいアカウントを作る
 
-tags:
-  - name: accounts
-    description: 全アカウントの情報  # 詳しい説明を書きましょう
-🌷タグの名前をaccountsとします📖
+パス：localhost:8080/citrus/accounts
+メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます
 
+🌷 特定のアカウントの情報を見る
 
-components:
-  parameters:  # {account_id}のようなものがパスパラメータ
-    account_id:
-      in: path
-      name: account_id
-      description: 取得対象のユーザーID
-      schema:
-        type: string
-      required: true # 必須という意味
-🌷{account_id}は後で何回も出てくるので、これパスパラメーターだよーとか、取得対象のユーザーidなんだよーとか、必須項目だよとかここに先に書いておきます。
-🌷後で「- $ref: &ldquo;#/components/parameters/account_id&rdquo;」と書いたら、{account_id}を使えます。
+パス：localhost:8080/citrus/accounts/abc
+メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます
 
+🌷 特定のアカウントのパスワードを変える
 
-paths:
-  /accounts:
-    get:
-      tags:  # accountsタグの中のお話📖  
-        - accounts
-      summary: アカウントの一覧を返す  # 説明を書きましょう。
-      description: アカウントの一覧をリストとして返す  # 詳しい説明を書きましょう
-      responses:
-        &#39;200&#39;:  # 成功
-          description: 成功
-          content:
-            application/json:  # JSON形式で返す
-              schema:
-                type: array  # 配列
-                items:
-                  type: string  # 文字列
-                  example: id1
-🌷/accountsというパスに対してGETをすると、成功だった場合（200)、アカウントの一覧をリストとしてJSON形式で返すことが書かれています。
-🌷schemaには返すデータの例がString（文字列）とarray（配列）を用いて表現されています。" />
+パス：localhost:8080/citrus/accounts/abc/password
+メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します
+
+4. {account_id} の役割
+🌷 localhost:8080/citrus/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます" />
   <meta name="author" content="←この日付無視してね" />
   
 
@@ -182,7 +173,7 @@ paths:
   <meta itemprop="description" content="説明かな？どこにも反映されてなさそうだ">
   <meta itemprop="datePublished" content="2024-12-28T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-12-28T00:00:00+00:00">
-  <meta itemprop="wordCount" content="313">
+  <meta itemprop="wordCount" content="435">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/swagger/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
@@ -308,17 +299,78 @@ paths:
     
   </header>
 
-  <section><p>コードを書く前に、何のデータをどんな形で送るのか、アカウントがなかったらどのようなエラーを出すか（404？401？)を決めてここに記し、コードを書くときにはSwaggerを見ながら書きます。</p>
-<p>📚 <a href="https://techblog.asahi-net.co.jp/entry/2019/03/04/102734">参考サイト</a></p>
-<p><a href="https://editor.swagger.io/">swagger editor</a></p>
-<p>以下は、Swagger editor (左) と Swagger UI (右) です<br>
-これを書いていきます（DELETE以外）
-Try our new Editorを押して、左のコードを全部消し、下の画像や次の説明をコピペしながら、UIと比べて理解していきましょう</p>
-<blockquote>
+  <section><h2 id="-swagger-editorhttpseditorswaggerio">📚 <a href="https://editor.swagger.io/">swagger editor</a></h2>
+<ul>
+<li>↑まずはここをクリック</li>
+</ul>
+<h2 id="-swaggerとは">🌞 <strong>Swaggerとは</strong></h2>
+<p>🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります<br>
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います<br>
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます</p>
+<h2 id="-まずはパスの説明をします">🖊 まずはパスの説明をします</h2>
+<h3 id="1-パスとは何か">1. パスとは何か？</h3>
+<p>🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。<br>
+たとえば：</p>
+<ul>
+<li>住所（パス）: localhost:8080/citrus/accounts</li>
+<li>意味: 「アカウントの情報がある場所」</li>
+<li>これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。</li>
+</ul>
+<h3 id="2-操作httpメソッドと組み合わせる">2. 操作（HTTPメソッド）と組み合わせる</h3>
+<p>🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：</p>
+<ul>
+<li>GET: データを取得する（見るだけ）</li>
+<li>POST: 新しいデータを追加する（作る）</li>
+<li>PUT: データを更新する（書き換える）</li>
+<li>DELETE: データを削除する（消す）</li>
+</ul>
+<h3 id="3-実際の例で説明">3. 実際の例で説明</h3>
+<p><strong>🌷 アカウント一覧を見る</strong></p>
+<ul>
+<li>パス：localhost:8080/citrus/accounts</li>
+<li>メソッド：GET<br>
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます</li>
+</ul>
+<p><strong>🌷 新しいアカウントを作る</strong></p>
+<ul>
+<li>パス：localhost:8080/citrus/accounts</li>
+<li>メソッド：POST<br>
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます</li>
+</ul>
+<p><strong>🌷 特定のアカウントの情報を見る</strong></p>
+<ul>
+<li>パス：localhost:8080/citrus/accounts/abc</li>
+<li>メソッド：GET<br>
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます</li>
+</ul>
+<p><strong>🌷 特定のアカウントのパスワードを変える</strong></p>
+<ul>
+<li>パス：localhost:8080/citrus/accounts/abc/password</li>
+<li>メソッド：PUT<br>
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します</li>
+</ul>
+<h3 id="4-account_id-の役割">4. {account_id} の役割</h3>
+<p>🌷 localhost:8080/citrus/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です<br>
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます</p>
+<p>例:</p>
+<ul>
+<li>localhost:8080/citrus/accounts/abc → アカウント ID が abc の情報</li>
+<li>localhost:8080/citrus/accounts/xyz → アカウント ID が xyz の情報<br>
+これによって、「どのアカウントを操作するか」が分かる仕組みです</li>
+</ul>
+<h3 id="5-まとめこの仕組みのポイント">5. まとめ：この仕組みのポイント</h3>
+<p>🌷 パス: 「どの情報にアクセスするか」を指定する住所のようなもの<br>
+🌷 HTTPメソッド: 「どんな操作をするか」を指定する命令<br>
+🌷 パラメータ（例: {account_id}）: 「具体的にどのデータか」を特定する変数部分<br>
+🌷 こうした仕組みを組み合わせて、サーバーはデータの管理や操作を効率的に行います</p>
+<h2 id="-次に実際に書いていきます">🖊 次に実際に書いていきます</h2>
+<p>🌷 以下は、Swagger editor (左) と Swagger UI (右) です<br>
+🌷 コピペしていってもらいます（DELETE以外）<br>
+🌷 Try our new Editorを押して、左のコードを全部消し、下の画像やコードをコピペしながら、UIと比べて理解していきましょう<br>
+🌷 postとgetは同じ位置にあるかなどインデントに気をつけてコピペしていってください</p>
 <p><img src="https://amika11071107.github.io/images/swagger6.png" alt="images"></p>
-</blockquote>
 <hr>
-<p>右のSwagger UIと照らして見ていくと、、</p>
+<p>🌷 右のSwagger UIと照らして見ていくと、、</p>
 <p><img src="https://amika11071107.github.io/images/info.png" alt="images"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.3</span>
 </span></span><span style="display:flex;"><span>
@@ -328,9 +380,7 @@ Try our new Editorを押して、左のコードを全部消し、下の画像�
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: |-<span style="color:#e6db74">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    bookチーム-分担1とか  </span>    
-</span></span></code></pre></div><p>🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。<br>
-🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。</p>
-<hr>
+</span></span></code></pre></div><hr>
 <p><img src="https://amika11071107.github.io/images/tags.png" alt="images"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">tags</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">accounts</span>
@@ -399,7 +449,7 @@ Try our new Editorを押して、左のコードを全部消し、下の画像�
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;409&#39;</span>:  <span style="color:#75715e"># 競合</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">すでにaccount_idが存在したとき</span>
 </span></span></code></pre></div><p>🌷/accountsというパスに対してPOSTをすると、成功だった場合（200)、x-www-form-urlencoded形式で、account_idとpasswordが keyとvalueで構成されるobject型データで登録されることが書かれています。 <br>
-🌷object型データ</p>
+🌷object型データというのは以下のような形</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">例 </span>: 
 </span></span><span style="display:flex;"><span>{  
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;key&#34;</span>        :  <span style="color:#e6db74">&#34;value&#34;</span>,  
@@ -443,7 +493,7 @@ Try our new Editorを押して、左のコードを全部消し、下の画像�
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード間違い          </span>
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;404&#39;</span>:
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">IDが存在しません</span>
-</span></span></code></pre></div><p>🌷queryParameterは、リソースを絞り込むま条件や追加情報をURLで指定するための方法<br>
+</span></span></code></pre></div><p>🌷queryParameterは、<br>
 🌷 id,pass<br>
 🌷/accounts{account_id}というパスに対してGETをすると、成功だった場合（200)、指定されたアカウントの情報（account_idとpassword）をJSON形式で返すことが書かれています。<br>
 🌷schemaには返すデータの例がString（文字列）とarray（配列）を用いて表現されています。</p>
@@ -476,7 +526,9 @@ Try our new Editorを押して、左のコードを全部消し、下の画像�
 </span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;401&#39;</span>:
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード間違い</span>
-</span></span></code></pre></div><p>以上でswaggerは終わり🎉</p>
+</span></span></code></pre></div><p>🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。<br>
+🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。</p>
+<p>以上でswaggerは終わり🎉</p>
 <p>次はIntellij ideaでバックエンドのコードを書いていくよ！</p>
 </section>
 
@@ -497,7 +549,7 @@ Try our new Editorを押して、左のコードを全部消し、下の画像�
     
     
     <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://amika11071107.github.io/post/intellij_idea/"
-      ><span>Intellij</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      ><span>Intellij IDEA</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     
   </nav>

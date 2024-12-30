@@ -1,42 +1,70 @@
 +++
 author = "←この日付無視してね"
-title = "Intellij"
+title = "Intellij IDEA"
 date = "2024-12-27"
 description = "ここはどこに表示されているのだろう"
 
 +++
 
+## 🌞 **バックエンドを書くよ！**  
+🌷 それでは、バックエンドのコードを書いていきましょう  
+🌷 バックエンドのコードは、IntelliJ IDEA の Ultimate （学生および教職員向けの個人ライセンス）を使って書いていきます    
 
 🌷 以下は19thのシトラスプロジェクトです🍊  
 🌷 このように、プロジェクトでは entites, repositories, resources という3つのPakageを作り、その中に 	javaファイルを作っていきます  
 🌷 他のプロジェクトが開いた状態になっている人は、左上の4本線をクリックし、fileからclose projectを押します。
-![images](/images/in.png)
+![images](/images/in.png)  
 
+-  
+-  
+-  
+## 🖊 作っていきます  
 🌷 以下の画面になると、まずはNewProjectを押します
 ![images](/images/in0.png)
 
-🌷 左のSpring Bootを選択し、JDKは21以上にします。  
+-  
+-  
+-  
+🌷 左のSpring Bootを選択し、JDKは21以上にします  
 🌷 Nameは好きな名前にに設定します  
 🌷 私はLessonServerと設定しました。Nextを押し、
 ![images](/images/in1.png)
 
+-  
+-  
+-  
 🌷 Jerseyを選択し、Createを押します
 ![images](/images/in2.png)
 
+-  
+-  
+-  
 
 🌷 LessonServer を右クリックし、その下に entitesと、resourcesという名前の Pakage を作ります  
 
 ![images](/images/in4.png)
 
+-  
+-  
+-  
 🌷 entitiesの中には、Account.javaを作ります（画像ではrepositoriesパッケージが作られてしまっていますが無視してください）
 ![images](/images/in5.png)
 
+-  
+-  
+-  
 🌷Accountと入力します
 ![images](/images/in6.png)
 
+-  
+-  
+-  
 🌷 resorcesの中には、AccountsRest.javaを作ります    
 ![images](/images/in7.png)
 
+-  
+-  
+-  
 🌷 Account.javaには以下をコピペしてください
 ```java
 package com.example.LessonServer.entities;
@@ -74,6 +102,9 @@ public class Account {
 
 ```
 
+-  
+-  
+-  
 🌷 AccountRest.javaには以下をコピペしてください
 ```java
 package com.example.LessonServer.resources;
