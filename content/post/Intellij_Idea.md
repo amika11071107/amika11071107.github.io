@@ -60,7 +60,27 @@ description = "ここはどこに表示されているのだろう"
 -  
 -  
 🌷 resorcesの中には、AccountsRest.javaを作ります    
+🌷 entitesやresourcesと同じ位置にJerseyConfigを作ります  
 ![images](/images/in7.png)
+
+-  
+-  
+-  
+🌷 JerseyConfigには以下をコピペしてください  
+```java
+package com.example.LessonServer;
+
+import org.glassfish.jersey.server.ResourceConfig;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JerseyConfig extends ResourceConfig {
+
+    public JerseyConfig() {
+        packages("com.example.LessonServer.resources");
+    }
+}  
+```
 
 -  
 -  

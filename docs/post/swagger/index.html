@@ -69,7 +69,7 @@
 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
 たとえば：
 
-住所（パス）: localhost:8080/citrus/accounts
+住所（パス）: localhost:8080/accounts
 意味: 「アカウントの情報がある場所」
 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。
 
@@ -84,30 +84,30 @@ DELETE: データを削除する（消す）
 3. 実際の例で説明
 🌷 アカウント一覧を見る
 
-パス：localhost:8080/citrus/accounts
+パス：localhost:8080/accounts
 メソッド：GET
 → 「アカウントが全部見たい！」と頼むと、一覧が返ってきます
 
 🌷 新しいアカウントを作る
 
-パス：localhost:8080/citrus/accounts
+パス：localhost:8080/accounts
 メソッド：POST
 → 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます
 
 🌷 特定のアカウントの情報を見る
 
-パス：localhost:8080/citrus/accounts/abc
+パス：localhost:8080/accounts/abc
 メソッド：GET
 → 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます
 
 🌷 特定のアカウントのパスワードを変える
 
-パス：localhost:8080/citrus/accounts/abc/password
+パス：localhost:8080/accounts/abc/password
 メソッド：PUT
 → 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します
 
 4. {account_id} の役割
-🌷 localhost:8080/citrus/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
 🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます" />
   <meta name="author" content="←この日付無視してね" />
   
@@ -170,15 +170,45 @@ DELETE: データを削除する（消す）
   
   
   <meta itemprop="name" content="Swagger">
-  <meta itemprop="description" content="説明かな？どこにも反映されてなさそうだ">
+  <meta itemprop="description" content="📚 swagger editor ↑まずはここをクリック 🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。 2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す） 3. 実際の例で説明 🌷 アカウント一覧を見る
+パス：localhost:8080/accounts メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます 🌷 新しいアカウントを作る
+パス：localhost:8080/accounts メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます 🌷 特定のアカウントの情報を見る
+パス：localhost:8080/accounts/abc メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます 🌷 特定のアカウントのパスワードを変える
+パス：localhost:8080/accounts/abc/password メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します 4. {account_id} の役割 🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます">
   <meta itemprop="datePublished" content="2024-12-28T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-12-28T00:00:00+00:00">
-  <meta itemprop="wordCount" content="435">
+  <meta itemprop="wordCount" content="433">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/swagger/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
   <meta property="og:title" content="Swagger">
-  <meta property="og:description" content="説明かな？どこにも反映されてなさそうだ">
+  <meta property="og:description" content="📚 swagger editor ↑まずはここをクリック 🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。 2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す） 3. 実際の例で説明 🌷 アカウント一覧を見る
+パス：localhost:8080/accounts メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます 🌷 新しいアカウントを作る
+パス：localhost:8080/accounts メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます 🌷 特定のアカウントの情報を見る
+パス：localhost:8080/accounts/abc メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます 🌷 特定のアカウントのパスワードを変える
+パス：localhost:8080/accounts/abc/password メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します 4. {account_id} の役割 🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -189,7 +219,22 @@ DELETE: データを削除する（消す）
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Swagger">
-  <meta name="twitter:description" content="説明かな？どこにも反映されてなさそうだ">
+  <meta name="twitter:description" content="📚 swagger editor ↑まずはここをクリック 🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。 2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す） 3. 実際の例で説明 🌷 アカウント一覧を見る
+パス：localhost:8080/accounts メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます 🌷 新しいアカウントを作る
+パス：localhost:8080/accounts メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます 🌷 特定のアカウントの情報を見る
+パス：localhost:8080/accounts/abc メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます 🌷 特定のアカウントのパスワードを変える
+パス：localhost:8080/accounts/abc/password メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します 4. {account_id} の役割 🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます">
 
   
   
@@ -312,7 +357,7 @@ DELETE: データを削除する（消す）
 <p>🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。<br>
 たとえば：</p>
 <ul>
-<li>住所（パス）: localhost:8080/citrus/accounts</li>
+<li>住所（パス）: localhost:8080/accounts</li>
 <li>意味: 「アカウントの情報がある場所」</li>
 <li>これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。</li>
 </ul>
@@ -327,35 +372,35 @@ DELETE: データを削除する（消す）
 <h3 id="3-実際の例で説明">3. 実際の例で説明</h3>
 <p><strong>🌷 アカウント一覧を見る</strong></p>
 <ul>
-<li>パス：localhost:8080/citrus/accounts</li>
+<li>パス：localhost:8080/accounts</li>
 <li>メソッド：GET<br>
 → 「アカウントが全部見たい！」と頼むと、一覧が返ってきます</li>
 </ul>
 <p><strong>🌷 新しいアカウントを作る</strong></p>
 <ul>
-<li>パス：localhost:8080/citrus/accounts</li>
+<li>パス：localhost:8080/accounts</li>
 <li>メソッド：POST<br>
 → 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます</li>
 </ul>
 <p><strong>🌷 特定のアカウントの情報を見る</strong></p>
 <ul>
-<li>パス：localhost:8080/citrus/accounts/abc</li>
+<li>パス：localhost:8080/accounts/abc</li>
 <li>メソッド：GET<br>
 → 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます</li>
 </ul>
 <p><strong>🌷 特定のアカウントのパスワードを変える</strong></p>
 <ul>
-<li>パス：localhost:8080/citrus/accounts/abc/password</li>
+<li>パス：localhost:8080/accounts/abc/password</li>
 <li>メソッド：PUT<br>
 → 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します</li>
 </ul>
 <h3 id="4-account_id-の役割">4. {account_id} の役割</h3>
-<p>🌷 localhost:8080/citrus/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です<br>
+<p>🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です<br>
 🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます</p>
 <p>例:</p>
 <ul>
-<li>localhost:8080/citrus/accounts/abc → アカウント ID が abc の情報</li>
-<li>localhost:8080/citrus/accounts/xyz → アカウント ID が xyz の情報<br>
+<li>localhost:8080/accounts/abc → アカウント ID が abc の情報</li>
+<li>localhost:8080/accounts/xyz → アカウント ID が xyz の情報<br>
 これによって、「どのアカウントを操作するか」が分かる仕組みです</li>
 </ul>
 <h3 id="5-まとめこの仕組みのポイント">5. まとめ：この仕組みのポイント</h3>
@@ -364,8 +409,7 @@ DELETE: データを削除する（消す）
 🌷 パラメータ（例: {account_id}）: 「具体的にどのデータか」を特定する変数部分<br>
 🌷 こうした仕組みを組み合わせて、サーバーはデータの管理や操作を効率的に行います</p>
 <h2 id="-次に実際に書いていきます">🖊 次に実際に書いていきます</h2>
-<p>🌷 以下は、Swagger editor (左) と Swagger UI (右) です<br>
-🌷 コピペしていってもらいます（DELETE以外）<br>
+<p>🌷 以下は、Swagger editor (左) と Swagger UI (右) です <br>
 🌷 Try our new Editorを押して、左のコードを全部消し、下の画像やコードをコピペしながら、UIと比べて理解していきましょう<br>
 🌷 postとgetは同じ位置にあるかなどインデントに気をつけてコピペしていってください</p>
 <p><img src="https://amika11071107.github.io/images/swagger6.png" alt="images"></p>
@@ -375,7 +419,7 @@ DELETE: データを削除する（消す）
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.3</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">info</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Citrus - OpenAPI 3.0  </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Lesson - OpenAPI 3.0  </span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">1.0.0</span> 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: |-<span style="color:#e6db74">

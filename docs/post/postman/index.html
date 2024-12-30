@@ -99,16 +99,16 @@ sign upする
 
 
 Post
-🌷 localhost:8080/LessonServer/accountsと入力  
+🌷 パスは localhost:8080/LessonServer/accountsと入力  
 🌷 Bodyを選択 
 🌷 x-www-form-urlencodedを選択 
 🌷 アカウントとパスワード の KeyとValueを入力するための欄が出てきます
 🌷 Key に account_id ,  passwordと入力
-🌷 Value に 自分のつけたいアカウント名とパスワードを入力 （ここでは myname と pass）
+🌷 Value に 自分のつけたいアカウント名とパスワードを入力 （ここでは name と password）
 （これがフォームデータとして x-www-form-urlencoded 形式で送信される
 🌷 Intellij起動して、
 🌷 Sendを押すと
-🌷 200と表示されるとOKです   
+🌷 200か204と表示されるとOKです   
 🌷 localhost:8080" />
   <meta name="author" content="←この日付無視してね" />
   
@@ -213,7 +213,7 @@ Post
   <meta itemprop="description" content="あ">
   <meta itemprop="datePublished" content="2019-03-08T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-03-08T00:00:00+00:00">
-  <meta itemprop="wordCount" content="105">
+  <meta itemprop="wordCount" content="133">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/postman/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
@@ -382,39 +382,65 @@ Post
 <li></li>
 </ul>
 <h2 id="post">Post</h2>
-<p>🌷 <strong><span style="color:yellowgreen">localhost:8080/LessonServer/accounts</span></strong>と<span style="color:deeppink">入力</span>  <br>
+<p>🌷 パスは <strong><span style="color:yellowgreen">localhost:8080/LessonServer/accounts</span></strong>と<span style="color:deeppink">入力</span>  <br>
 🌷 <span style="color:deeppink">Bodyを選択</span> <br>
 🌷 <span style="color:deeppink">x-www-form-urlencodedを選択</span> <br>
 🌷 <span style="color:deeppink">アカウントとパスワード</span> の <span style="color:purple">KeyとValueを入力するための欄が出てきます</span><br>
 🌷 <span style="color:purple">Key</span> に <span style="color:green">account_id ,  password</span>と<span style="color:deeppink">入力</span><br>
-🌷 <span style="color:purple">Value</span> に 自分のつけたいアカウント名とパスワードを<span style="color:deeppink">入力</span> （ここでは myname と pass）<br>
+🌷 <span style="color:purple">Value</span> に 自分のつけたいアカウント名とパスワードを<span style="color:deeppink">入力</span> （ここでは name と password）<br>
 （これがフォームデータとして <span style="color:deeppink">x-www-form-urlencoded</span> 形式で送信される<br>
 🌷 <strong>Intellij起動</strong>して、<br>
 🌷 <span style="color:deeppink">Sendを押すと</span><br>
-🌷 <span style="color:purple">200</span>と表示されるとOKです   <br>
+🌷 <span style="color:purple">200か204</span>と表示されるとOKです   <br>
 🌷 <strong><span style="color:yellowgreen">localhost:8080</span></strong></p>
 <ul>
 <li><strong>localhost</strong>はコンピュータ自信を指す特別なホスト名</li>
 <li>IPアドレスに置き換えると127.0.0.1と同じ</li>
 <li><strong>8080</strong>はポート番号<br>
-<img src="https://amika11071107.github.io/images/postman6.png" alt="images">
-<strong>AccountRest.java</strong> (Intellij IDEA)<br>
-POSTは、@Consumesがいる
-<img src="https://amika11071107.github.io/images/post1.png" alt="images"></li>
+<img src="https://amika11071107.github.io/images/postman6.png" alt="images"><br>
+👀 swagger
+<img src="https://amika11071107.github.io/images/swagger2.png" alt="images"></li>
+</ul>
+<p>👀 AccountRest.java (Intellij IDEA)<br>
+🌷 POSTは、@Consumesがいる
+<img src="https://amika11071107.github.io/images/post1.png" alt="images">
+account_idとそれに対応するAccount情報（Account）がまとまったHashMapを作成し、accounts変数に代入</p>
+<h3 id="accountsの内容例-hashmap"><strong>accountsの内容例 (HashMap)</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Key (<code>account_id</code>)</strong></th>
+          <th><strong>Value (<code>Account</code> オブジェクト)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ldquo;name&rdquo;</td>
+          <td>Account(account_id=&ldquo;name&rdquo;, password=&ldquo;password&rdquo;)</td>
+      </tr>
+      <tr>
+          <td>&ldquo;name2&rdquo;</td>
+          <td>Account(account_id=&ldquo;name2&rdquo;, password=&ldquo;password!&rdquo;)`</td>
+      </tr>
+  </tbody>
+</table>
+<p>🌷  KeyはSet（集合）なので、かぶってはいけない</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 <h2 id="get">GET</h2>
-<p><span style="color:yellowgreen">{ここに</span><span style="color:green">accountId</span><span style="color:yellowgreen">入れる}。</span><br>
-下は<span style="color:deeppink">token</span>だけ
-<img src="https://amika11071107.github.io/images/postman7.png" alt="images"><br>
-<em>今はまだ何も情報を入れていないから、返ってくる<span style="color:purple">introduction は null</span> になっている</em></p>
-<p><strong>AccountRest.java</strong>
-<img src="https://amika11071107.github.io/images/get1.png" alt="images">
-AccountManager.java</p>
-<p><img src="https://amika11071107.github.io/images/amga.png" alt="images"><br>
-<em>②作ったHashMap（accounts）に、アカウントIDを与えてaccounts.get(accountId)と書くことでそのアカウント情報を取ってくれる</em></p>
-<p><img src="https://amika11071107.github.io/images/amhm.png" alt="images"><br>
-<em>①アカウントIDとそれに対応するアカウント情報（Account）がまとまったHashMapを作成し、accountsに代入</em></p>
-<p><strong>Account.java</strong><br>
+<p>🌷 次に、Getを選択<br>
+🌷 <span style="color:yellowgreen">{ここに</span><span style="color:green">accountId</span><span style="color:yellowgreen">入れる}。</span><br>
+🌷 Query Params に入力すると、勝手にパスも?password=passwordと入力される
+🌷 Sendを押すと、JSON形式で返ってきている
+<img src="https://amika11071107.github.io/images/postman7.png" alt="images"></p>
+<p>👀 Swagger<br>
+<img src="https://amika11071107.github.io/images/swagger3.png" alt="images"></p>
+<p>👀 AccountRest.java  (Intellij IDEA)
+<img src="https://amika11071107.github.io/images/get1.png" alt="images">　　</p>
+<p>👀 Account.java<br>
 <img src="https://amika11071107.github.io/images/aj.png" alt="images"></p>
 <p>以上でPostmanは終わり🎉</p>
 <p>次はAndroidStudioでフロントエンドを書いていくよ！</p>

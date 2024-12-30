@@ -2,7 +2,7 @@
 author = "←この日付無視してね"
 title = "Swagger"
 date = "2024-12-28"
-description = "説明かな？どこにも反映されてなさそうだ"
+description = ""
 +++
 
 
@@ -19,7 +19,7 @@ description = "説明かな？どこにも反映されてなさそうだ"
 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。  
 たとえば：  
 
-- 住所（パス）: localhost:8080/citrus/accounts  
+- 住所（パス）: localhost:8080/accounts  
 - 意味: 「アカウントの情報がある場所」  
 - これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  
 
@@ -33,32 +33,32 @@ description = "説明かな？どこにも反映されてなさそうだ"
   
 ### 3. 実際の例で説明  
 **🌷 アカウント一覧を見る**  
-- パス：localhost:8080/citrus/accounts  
+- パス：localhost:8080/accounts  
 - メソッド：GET  
 → 「アカウントが全部見たい！」と頼むと、一覧が返ってきます  
 
 **🌷 新しいアカウントを作る**  
-- パス：localhost:8080/citrus/accounts  
+- パス：localhost:8080/accounts  
 - メソッド：POST  
 → 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます  
 
 **🌷 特定のアカウントの情報を見る**  
-- パス：localhost:8080/citrus/accounts/abc  
+- パス：localhost:8080/accounts/abc  
 - メソッド：GET  
 → 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます
 
 **🌷 特定のアカウントのパスワードを変える**  
-- パス：localhost:8080/citrus/accounts/abc/password  
+- パス：localhost:8080/accounts/abc/password  
 - メソッド：PUT  
 → 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します  
 
 ### 4. {account_id} の役割  
-🌷 localhost:8080/citrus/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です  
+🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です  
 🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます  
 
 例:  
-- localhost:8080/citrus/accounts/abc → アカウント ID が abc の情報  
-- localhost:8080/citrus/accounts/xyz → アカウント ID が xyz の情報  
+- localhost:8080/accounts/abc → アカウント ID が abc の情報  
+- localhost:8080/accounts/xyz → アカウント ID が xyz の情報  
 これによって、「どのアカウントを操作するか」が分かる仕組みです  
 
 ### 5. まとめ：この仕組みのポイント  
@@ -68,8 +68,7 @@ description = "説明かな？どこにも反映されてなさそうだ"
 🌷 こうした仕組みを組み合わせて、サーバーはデータの管理や操作を効率的に行います  
 
 ## 🖊 次に実際に書いていきます   
-🌷 以下は、Swagger editor (左) と Swagger UI (右) です  
-🌷 コピペしていってもらいます（DELETE以外）  
+🌷 以下は、Swagger editor (左) と Swagger UI (右) です    
 🌷 Try our new Editorを押して、左のコードを全部消し、下の画像やコードをコピペしながら、UIと比べて理解していきましょう  
 🌷 postとgetは同じ位置にあるかなどインデントに気をつけてコピペしていってください  
 
@@ -85,7 +84,7 @@ description = "説明かな？どこにも反映されてなさそうだ"
 openapi: 3.0.3
 
 info:
-  title: Citrus - OpenAPI 3.0  
+  title: Lesson - OpenAPI 3.0  
   version: 1.0.0 
 
   description: |-

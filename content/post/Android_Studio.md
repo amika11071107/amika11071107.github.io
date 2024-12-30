@@ -5,12 +5,13 @@ date = "2019-03-05"
 description = "Guide to emoji usage in Hugo"
 +++
 
+## 🌞 **フロンドエンド書いていくよ！**
+🌷 スマホやPC上で動くプログラムをフロントエンドといいます  
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います  
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます  
+🌷 まず、Android Studio のプロジェクトを作成していきましょう   
 
-手順を説明します🐘  
-
--  
--  
--  
+## 🖊手順を説明します🐘 
 🌷 NewProjectを押します  
 ![images](/images/app1.png)  
 
@@ -62,30 +63,30 @@ description = "Guide to emoji usage in Hugo"
 -  
 🌷 プロジェクト全体をコンパイルすることをビルドといいます  
 （コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）  
-🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています。  
-🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます。  
-🌷 それでは、build.gradle.kts をあけます。  
+🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています  
+🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます  
+🌷 それでは、build.gradle.kts をあけます  
 ![images](/images/app8.png)
 
 -  
 -  
 -  
-🌷 retrofitをダウンロードできるように以下を追加します。  
-🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます。
+🌷 retrofitをダウンロードできるように以下を追加します  
+🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます
 ![images](/images/app55.png)
 
 -  
 -  
 -  
-🌷 次に MainActivity の名前を SignUpActivity に変えます。  
+🌷 次に MainActivity の名前を SignUpActivity に変えます  
 🌷 figmaでは３つの画面を作りましたね   
-🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します。
+🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します
 ![images](/images/app56.png)  
 
 -  
 -  
 -  
-🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します。
+🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します
 ![images](/images/app11.png)  
 
 -  
@@ -98,7 +99,7 @@ description = "Guide to emoji usage in Hugo"
 -  
 -  
 -  
-🌷 同じように、レイアウトの名前も分かりやすいように変えます。
+🌷 同じように、レイアウトの名前も分かりやすいように変えます
 ![images](/images/app13.png)  
 
 -  
@@ -111,20 +112,20 @@ description = "Guide to emoji usage in Hugo"
 -  
 -  
 -  
-🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります。   
-🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます。  
+🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります   
+🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます  
 ![images](/images/app15.png)
 
 -  
 -  
 -  
-🌷 まず、viewsパッケージを作ります。
+🌷 まず、viewsパッケージを作ります
 ![images](/images/app16.png)
 
 -  
 -  
 -  
-🌷viewsというPackageにSignUpActivityをドラック＆ドロップする。（viewの中に入れる）
+🌷viewsというPackageにSignUpActivityをドラック＆ドロップする（viewの中に入れる）
 ![images](/images/app17.png)  
 
 -  
@@ -136,20 +137,20 @@ description = "Guide to emoji usage in Hugo"
 -  
 -  
 -  
-🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです。  
-🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す。
+🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです  
+🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す
 ![images](/images/app20.png)
 
 -  
 -  
 -  
-🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます。
+🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます
 ![images](/images/app21.png)
 
 -  
 -  
 -  
-🌷 modelパッケージの中にはAccount.javaを作ります。
+🌷 modelパッケージの中にはAccount.javaを作ります
 ![images](/images/app23.png)
 
 -  
@@ -162,12 +163,6 @@ description = "Guide to emoji usage in Hugo"
 -  
 -  
 🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける  
-🌷 ↓はIntelij
-![images](/images/app80.png)
-
--  
--  
--  
 🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。  
 🌷 com.example.lessonを右クリックする。
 ![images](/images/app25.png)
@@ -202,6 +197,52 @@ description = "Guide to emoji usage in Hugo"
 🌷 ここでは、IntellijのAccountRestと対応するように書いていく  
 🌷 IntelijではFormParamと書かれているがAndroidStudioではFieldと書く
 ![images](/images/app85.png)
+```java
+package com.example.lessonClient.rest;
+
+import com.example.lessonClient.models.Account;
+import java.util.Set;
+import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
+
+public interface AccountsRest {
+  // 全体のアカウント一覧
+  @GET("accounts")
+  Call<Set<String>> getAccounts(
+  );
+
+  // サインアップ
+  @FormUrlEncoded
+  @POST("accounts")
+  Call<Void> signup(
+      @Field("account_id") String account_id,
+      @Field("password") String password
+  );
+
+  //指定されたアカウント情報を返す
+  @GET("accounts/{account_id}")
+  Call<Account> getAccountInfo(
+      @Path("account_id") String account_id,
+      @Query("password") String password
+  );
+
+  // パスワード変更
+  @FormUrlEncoded
+  @PUT("accounts/{account_id}/password")
+  Call<Void> changePW(
+      @Path("account_id") String account_id,
+      @Field("new_password") String new_password,
+      @Field("old_password") String old_password
+  );
+
+}
+```
 
 -  
 -  
@@ -413,14 +454,13 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 -  
 🌷 赤くなっている部分をなくすために以下のようにimport文を追加する
 
-![images](/images/app66.png)  
-
-🌷 動かす仮想マシーンを選択する  
+![images](/images/app66.png)   
 ![images](/images/app67.png)  
 
 -  
 -  
 -  
+🌷 動かす仮想マシーンを選択する 
 ![images](/images/app88.png) 
 🌷 これで実行▷を押し、ユーザーネームなどは触らず、Registerボタンの押し、Settings画面に遷移するとOK
 ![images](/images/app82.png)
@@ -451,6 +491,7 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 -  
 -  
 -  
+↓コピー用  
 ```java
  call.enqueue(new Callback<Void>() {  // call.enqueueはリクエストをサーバーに送るよ！結果が返ってきたらこれをやってね」という動きを設定します。
           @Override  // 元々用意された『onResponse』の動きを上書きして自分で作り直してますよ！」とプログラムに伝える。
@@ -476,7 +517,7 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 -  
 -  
 🌷 次に、Setting画面に現在のパスワードと新しいパスワードを正しく入力すると変更されるように以下の場所にコードを書いていきます  
-![images](/images/app84.png) 
+![images](/images/app87.png) 
 🌷 以下のコードをonCreateメソッド内に書いてください  
 🌷 ほとんどSignUpActivutyの応用なのでなにが書いてあるか読んでみましょう  
 
@@ -570,7 +611,8 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
  ![images](/images/app89.png) 
  ![images](/images/app90.png) 
  ![images](/images/app91.png) 
- ![images](/images/app92.png) 
+ ![images](/images/app92.png)
+🌷 私はaaaの前にも11というアカウント名で実行していたので二つのアカウントidが出力されました   
  ![images](/images/app93.png)  
 🌷 お疲れ様です。課題は以上です。
 

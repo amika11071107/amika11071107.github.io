@@ -45,42 +45,54 @@ math: true
 -  
 -   
 ## Post 
-🌷 **{{< color  yellowgreen "localhost:8080/LessonServer/accounts" >}}**と{{< color  deeppink "入力" >}}     
+🌷 パスは **{{< color  yellowgreen "localhost:8080/LessonServer/accounts" >}}**と{{< color  deeppink "入力" >}}     
 🌷 {{< color  deeppink "Bodyを選択" >}}    
 🌷 {{< color  deeppink "x-www-form-urlencodedを選択" >}}    
 🌷 {{< color  deeppink "アカウントとパスワード" >}} の {{< color  purple "KeyとValueを入力するための欄が出てきます" >}}  
 🌷 {{< color  purple "Key" >}} に {{< color  green "account_id ,  password" >}}と{{< color  deeppink "入力" >}}  
-🌷 {{< color  purple "Value" >}} に 自分のつけたいアカウント名とパスワードを{{< color  deeppink "入力" >}} （ここでは myname と pass）   
+🌷 {{< color  purple "Value" >}} に 自分のつけたいアカウント名とパスワードを{{< color  deeppink "入力" >}} （ここでは name と password）   
 （これがフォームデータとして {{< color  deeppink "x-www-form-urlencoded" >}} 形式で送信される  
 🌷 **Intellij起動**して、  
 🌷 {{< color  deeppink "Sendを押すと" >}}  
-🌷 {{< color  purple "200" >}}と表示されるとOKです      
+🌷 {{< color  purple "200か204" >}}と表示されるとOKです      
 🌷 **{{< color  yellowgreen "localhost:8080" >}}**   
 -  **localhost**はコンピュータ自信を指す特別なホスト名  
 -  IPアドレスに置き換えると127.0.0.1と同じ  
 -  **8080**はポート番号   
-![images](/images/postman6.png)
-**AccountRest.java** (Intellij IDEA)  
-POSTは、@Consumesがいる
+![images](/images/postman6.png)  
+👀 swagger
+![images](/images/swagger2.png)
+
+👀 AccountRest.java (Intellij IDEA)  
+🌷 POSTは、@Consumesがいる
 ![images](/images/post1.png)
+account_idとそれに対応するAccount情報（Account）がまとまったHashMapを作成し、accounts変数に代入
+### **accountsの内容例 (HashMap)**
 
+| **Key (`account_id`)** | **Value (`Account` オブジェクト)**                 |
+|------------------------|------------------------------------                 |
+|    "name"              |  Account(account_id="name", password="password")    |
+|    "name2"             |  Account(account_id="name2", password="password!")` |
+
+🌷  KeyはSet（集合）なので、かぶってはいけない
+
+-  
+-  
+-  
 ## GET  
-{{< color  yellowgreen "{ここに" >}}{{< color  green "accountId" >}}{{< color  yellowgreen "入れる}。" >}}  
-下は{{< color  deeppink "token" >}}だけ
-![images](/images/postman7.png)  
-*今はまだ何も情報を入れていないから、返ってくる{{< color  purple "introduction は null" >}} になっている*  
+🌷 次に、Getを選択  
+🌷 {{< color  yellowgreen "{ここに" >}}{{< color  green "accountId" >}}{{< color  yellowgreen "入れる}。" >}}  
+🌷 Query Params に入力すると、勝手にパスも?password=passwordと入力される
+🌷 Sendを押すと、JSON形式で返ってきている 
+![images](/images/postman7.png) 
+  
+👀 Swagger  
+![images](/images/swagger3.png)
 
-**AccountRest.java** 
-![images](/images/get1.png)
-AccountManager.java  
+👀 AccountRest.java  (Intellij IDEA)
+![images](/images/get1.png)　　 
 
-![images](/images/amga.png)  
-*②作ったHashMap（accounts）に、アカウントIDを与えてaccounts.get(accountId)と書くことでそのアカウント情報を取ってくれる*  
-
-![images](/images/amhm.png)  
-*①アカウントIDとそれに対応するアカウント情報（Account）がまとまったHashMapを作成し、accountsに代入*  
-
-**Account.java**  
+👀 Account.java  
 ![images](/images/aj.png)
 
 以上でPostmanは終わり🎉

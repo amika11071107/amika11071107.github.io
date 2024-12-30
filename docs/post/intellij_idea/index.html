@@ -114,13 +114,8 @@
 
 
 🌷 resorcesの中には、AccountsRest.javaを作ります 
-
-
-
-
-
-
-🌷 Account.javaには以下をコピペしてください" />
+🌷 entitesやresourcesと同じ位置にJerseyConfigを作ります
+" />
   <meta name="author" content="←この日付無視してね" />
   
 
@@ -185,7 +180,7 @@
   <meta itemprop="description" content="ここはどこに表示されているのだろう">
   <meta itemprop="datePublished" content="2024-12-27T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-12-27T00:00:00+00:00">
-  <meta itemprop="wordCount" content="334">
+  <meta itemprop="wordCount" content="357">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/intellij_idea/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
@@ -369,8 +364,27 @@
 <li></li>
 </ul>
 <p>🌷 resorcesの中には、AccountsRest.javaを作ります <br>
+🌷 entitesやresourcesと同じ位置にJerseyConfigを作ります<br>
 <img src="https://amika11071107.github.io/images/in7.png" alt="images"></p>
 <ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 JerseyConfigには以下をコピペしてください</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.LessonServer;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.glassfish.jersey.server.ResourceConfig;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Component;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JerseyConfig</span> <span style="color:#66d9ef">extends</span> ResourceConfig {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">JerseyConfig</span>() {
+</span></span><span style="display:flex;"><span>        packages(<span style="color:#e6db74">&#34;com.example.LessonServer.resources&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><ul>
 <li></li>
 <li></li>
 <li></li>

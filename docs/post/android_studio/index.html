@@ -56,12 +56,12 @@
   
   
   
-  <meta name="description" content="手順を説明します🐘
-
-
-
-
-
+  <meta name="description" content="🌞 フロンドエンド書いていくよ！
+🌷 スマホやPC上で動くプログラムをフロントエンドといいます
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます
+🌷 まず、Android Studio のプロジェクトを作成していきましょう
+🖊手順を説明します🐘
 🌷 NewProjectを押します
 
 
@@ -103,26 +103,7 @@
 🌷 Androidでは画面のことをActivityといいます
 🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります
 🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。
-🌷 次に、activity_main.xml を押しましょう
-
-
-
-
-
-
-🌷このxmlでは、一つの画面のレイアウトをいじります。（後で戻ってくるので理解はざっくりでok）
-
-
-
-
-
-
-🌷 プロジェクト全体をコンパイルすることをビルドといいます
-（コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）
-🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています。
-🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます。
-🌷 それでは、build.gradle.kts をあけます。
-" />
+🌷 次に、activity_main.xml を押しましょう" />
   <meta name="author" content="←この日付無視してね" />
   
 
@@ -187,7 +168,7 @@
   <meta itemprop="description" content="Guide to emoji usage in Hugo">
   <meta itemprop="datePublished" content="2019-03-05T00:00:00+00:00">
   <meta itemprop="dateModified" content="2019-03-05T00:00:00+00:00">
-  <meta itemprop="wordCount" content="548">
+  <meta itemprop="wordCount" content="643">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/android_studio/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
@@ -313,12 +294,12 @@
     
   </header>
 
-  <section><p>手順を説明します🐘</p>
-<ul>
-<li></li>
-<li></li>
-<li></li>
-</ul>
+  <section><h2 id="-フロンドエンド書いていくよ">🌞 <strong>フロンドエンド書いていくよ！</strong></h2>
+<p>🌷 スマホやPC上で動くプログラムをフロントエンドといいます<br>
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います<br>
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます<br>
+🌷 まず、Android Studio のプロジェクトを作成していきましょう</p>
+<h2 id="手順を説明します">🖊手順を説明します🐘</h2>
 <p>🌷 NewProjectを押します<br>
 <img src="https://amika11071107.github.io/images/app1.png" alt="images"></p>
 <ul>
@@ -376,33 +357,33 @@
 </ul>
 <p>🌷 プロジェクト全体をコンパイルすることをビルドといいます<br>
 （コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）<br>
-🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています。<br>
-🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます。<br>
-🌷 それでは、build.gradle.kts をあけます。<br>
+🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています<br>
+🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます<br>
+🌷 それでは、build.gradle.kts をあけます<br>
 <img src="https://amika11071107.github.io/images/app8.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 retrofitをダウンロードできるように以下を追加します。<br>
-🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます。
+<p>🌷 retrofitをダウンロードできるように以下を追加します<br>
+🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます
 <img src="https://amika11071107.github.io/images/app55.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 次に MainActivity の名前を SignUpActivity に変えます。<br>
+<p>🌷 次に MainActivity の名前を SignUpActivity に変えます<br>
 🌷 figmaでは３つの画面を作りましたね<br>
-🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します。
+🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します
 <img src="https://amika11071107.github.io/images/app56.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します。
+<p>🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します
 <img src="https://amika11071107.github.io/images/app11.png" alt="images"></p>
 <ul>
 <li></li>
@@ -417,7 +398,7 @@
 <li></li>
 <li></li>
 </ul>
-<p>🌷 同じように、レイアウトの名前も分かりやすいように変えます。
+<p>🌷 同じように、レイアウトの名前も分かりやすいように変えます
 <img src="https://amika11071107.github.io/images/app13.png" alt="images"></p>
 <ul>
 <li></li>
@@ -432,22 +413,22 @@
 <li></li>
 <li></li>
 </ul>
-<p>🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります。<br>
-🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます。<br>
+<p>🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります<br>
+🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます<br>
 <img src="https://amika11071107.github.io/images/app15.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 まず、viewsパッケージを作ります。
+<p>🌷 まず、viewsパッケージを作ります
 <img src="https://amika11071107.github.io/images/app16.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷viewsというPackageにSignUpActivityをドラック＆ドロップする。（viewの中に入れる）
+<p>🌷viewsというPackageにSignUpActivityをドラック＆ドロップする（viewの中に入れる）
 <img src="https://amika11071107.github.io/images/app17.png" alt="images"></p>
 <ul>
 <li></li>
@@ -461,22 +442,22 @@
 <li></li>
 <li></li>
 </ul>
-<p>🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです。<br>
-🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す。
+<p>🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです<br>
+🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す
 <img src="https://amika11071107.github.io/images/app20.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます。
+<p>🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます
 <img src="https://amika11071107.github.io/images/app21.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 modelパッケージの中にはAccount.javaを作ります。
+<p>🌷 modelパッケージの中にはAccount.javaを作ります
 <img src="https://amika11071107.github.io/images/app23.png" alt="images"></p>
 <ul>
 <li></li>
@@ -491,14 +472,7 @@
 <li></li>
 </ul>
 <p>🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける<br>
-🌷 ↓はIntelij
-<img src="https://amika11071107.github.io/images/app80.png" alt="images"></p>
-<ul>
-<li></li>
-<li></li>
-<li></li>
-</ul>
-<p>🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。<br>
+🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。<br>
 🌷 com.example.lessonを右クリックする。
 <img src="https://amika11071107.github.io/images/app25.png" alt="images"></p>
 <ul>
@@ -537,7 +511,51 @@
 <p>🌷 ここでは、IntellijのAccountRestと対応するように書いていく<br>
 🌷 IntelijではFormParamと書かれているがAndroidStudioではFieldと書く
 <img src="https://amika11071107.github.io/images/app85.png" alt="images"></p>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.lessonClient.rest;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.lessonClient.models.Account;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Set;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.Call;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.Field;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.FormUrlEncoded;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.GET;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.POST;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.PUT;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.Path;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.Query;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">AccountsRest</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 全体のアカウント一覧</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;accounts&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">getAccounts</span>(
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// サインアップ</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@FormUrlEncoded</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@POST</span>(<span style="color:#e6db74">&#34;accounts&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">signup</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String account_id,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;password&#34;</span>) String password
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//指定されたアカウント情報を返す</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;accounts/{account_id}&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Account<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAccountInfo</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String account_id,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Query</span>(<span style="color:#e6db74">&#34;password&#34;</span>) String password
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// パスワード変更</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@FormUrlEncoded</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@PUT</span>(<span style="color:#e6db74">&#34;accounts/{account_id}/password&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">changePW</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String account_id,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;new_password&#34;</span>) String new_password,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;old_password&#34;</span>) String old_password
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li></li>
 <li></li>
 <li></li>
@@ -759,15 +777,15 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 <li></li>
 </ul>
 <p>🌷 赤くなっている部分をなくすために以下のようにimport文を追加する</p>
-<p><img src="https://amika11071107.github.io/images/app66.png" alt="images"></p>
-<p>🌷 動かす仮想マシーンを選択する<br>
+<p><img src="https://amika11071107.github.io/images/app66.png" alt="images"><br>
 <img src="https://amika11071107.github.io/images/app67.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p><img src="https://amika11071107.github.io/images/app88.png" alt="images">
+<p>🌷 動かす仮想マシーンを選択する
+<img src="https://amika11071107.github.io/images/app88.png" alt="images">
 🌷 これで実行▷を押し、ユーザーネームなどは触らず、Registerボタンの押し、Settings画面に遷移するとOK
 <img src="https://amika11071107.github.io/images/app82.png" alt="images"></p>
 <ul>
@@ -798,6 +816,7 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 <li></li>
 <li></li>
 </ul>
+<p>↓コピー用</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> call.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {  <span style="color:#75715e">// call.enqueueはリクエストをサーバーに送るよ！結果が返ってきたらこれをやってね」という動きを設定します。</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">@Override</span>  <span style="color:#75715e">// 元々用意された『onResponse』の動きを上書きして自分で作り直してますよ！」とプログラムに伝える。</span>
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span>(Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> call, Response<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> response) {  <span style="color:#75715e">// サーバーから返事が返ってきた場合に呼ばれる。</span>
@@ -820,7 +839,7 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 <li></li>
 </ul>
 <p>🌷 次に、Setting画面に現在のパスワードと新しいパスワードを正しく入力すると変更されるように以下の場所にコードを書いていきます<br>
-<img src="https://amika11071107.github.io/images/app84.png" alt="images">
+<img src="https://amika11071107.github.io/images/app87.png" alt="images">
 🌷 以下のコードをonCreateメソッド内に書いてください<br>
 🌷 ほとんどSignUpActivutyの応用なのでなにが書いてあるか読んでみましょう</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    String str_account_id <span style="color:#f92672">=</span> getIntent().<span style="color:#a6e22e">getStringExtra</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>);
@@ -909,6 +928,7 @@ XMLレイアウトファイルで定義されたボタンのIDを取得します
 <img src="https://amika11071107.github.io/images/app90.png" alt="images">
 <img src="https://amika11071107.github.io/images/app91.png" alt="images">
 <img src="https://amika11071107.github.io/images/app92.png" alt="images">
+🌷 私はaaaの前にも11というアカウント名で実行していたので二つのアカウントidが出力されました<br>
 <img src="https://amika11071107.github.io/images/app93.png" alt="images"><br>
 🌷 お疲れ様です。課題は以上です。</p>
 
