@@ -446,7 +446,7 @@ onClick メソッドをオーバーライドしています。
 
 🌷 Intent:
 
-Intent は、Android でアクティビティ（画面）間の通信を行う仕組みです。このコードでは、現在のアクティビティ（CurrentActivity）から別のアクティビティ（LoginActivity）に遷移するための指示を Intent を使って作成しています。
+Intent は、Android でアクティビティ（画面）間の通信を行う仕組みです。このコードでは、現在のアクティビティ（SignUpActivity）から別のアクティビティ（SettingsActivity）に遷移するための指示を Intent を使って作成しています
 
 
 -  
