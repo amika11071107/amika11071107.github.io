@@ -2,7 +2,7 @@
 author: ←この日付無視してね
 title: Postman
 date: 2019-03-08
-description: あ
+description: 
 math: true
 ---
 
@@ -45,12 +45,12 @@ math: true
 -  
 -   
 ## Post 
-🌷 パスは **{{< color  yellowgreen "localhost:8080/LessonServer/accounts" >}}**と{{< color  deeppink "入力" >}}     
+🌷 パスは **{{< color  yellowgreen "localhost:8080/accounts" >}}**と{{< color  deeppink "入力" >}}     
 🌷 {{< color  deeppink "Bodyを選択" >}}    
 🌷 {{< color  deeppink "x-www-form-urlencodedを選択" >}}    
 🌷 {{< color  deeppink "アカウントとパスワード" >}} の {{< color  purple "KeyとValueを入力するための欄が出てきます" >}}  
 🌷 {{< color  purple "Key" >}} に {{< color  green "account_id ,  password" >}}と{{< color  deeppink "入力" >}}  
-🌷 {{< color  purple "Value" >}} に 自分のつけたいアカウント名とパスワードを{{< color  deeppink "入力" >}} （ここでは name と password）   
+🌷 {{< color  purple "Value" >}} に 自分のつけたいアカウント名とパスワードを{{< color  deeppink "入力" >}} （ここでは myname と pass）   
 （これがフォームデータとして {{< color  deeppink "x-www-form-urlencoded" >}} 形式で送信される  
 🌷 **Intellij起動**して、  
 🌷 {{< color  deeppink "Sendを押すと" >}}  

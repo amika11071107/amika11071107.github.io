@@ -2,7 +2,7 @@
 author = "←この日付無視してね"
 title = "AndroidStudio"
 date = "2019-03-05"
-description = "Guide to emoji usage in Hugo"
+description = ""
 +++
 
 ## 🌞 **フロンドエンド書いていくよ！**
@@ -25,7 +25,7 @@ description = "Guide to emoji usage in Hugo"
 -  
 -  
 🌷 Nameにタイトルを入力  
-🌷 Build configuration languageをKotlinにする  
+🌷 Build configuration languageを Groovy DSL にする  
 🌷 Minimum SDKを API30 にする  
 ![images](/images/app3.png)  
 
@@ -63,9 +63,9 @@ description = "Guide to emoji usage in Hugo"
 -  
 🌷 プロジェクト全体をコンパイルすることをビルドといいます  
 （コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）  
-🌷 🐘build.gradle.ktsにはビルドの設定と、使用するライブラリが書かれています  
+🌷 🐘build.gradleにはビルドの設定と、使用するライブラリが書かれています  
 🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます  
-🌷 それでは、build.gradle.kts をあけます  
+🌷 それでは、build.gradle をあけます  
 ![images](/images/app8.png)
 
 -  
@@ -112,7 +112,7 @@ description = "Guide to emoji usage in Hugo"
 -  
 -  
 -  
-🌷 次に、com/example/lessonの下にPakageをviews,models,restの3つ作ります   
+🌷 次に、com/example/lessonの下にPackageをviews,models,restの3つ作ります   
 🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます  
 ![images](/images/app15.png)
 
@@ -406,7 +406,7 @@ public interface AccountsRest {
 
 
 🌷 findViewByIdメソッド：  
-XMLレイアウトファイルで定義されたボタンのIDを取得します
+XMLレイアウトファイルで定義されたボタンのIDを引数に渡してボタンを取得します  
 
 🌷 (Button)：  
 取得したビュー（View オブジェクト）を Button 型にキャストする必要があります。
@@ -469,7 +469,7 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 -  
 -   
 🌷 次に、サーバー（intellij）と通信できるようにするコードを追加し、SignUp時に、account_idとpasswordをサーバに保存してもらえるようにする  
-🌷 まず、以下を書く
+🌷 まず、SignUpActivity.java の onCreate() メソッドに以下を書く
 ![images](/images/app83.png)
 🌷 AccountsRest accountsRest = retrofit.create(AccountsRest.class);  
 🌷 この行を書くことで   
@@ -518,8 +518,8 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 -  
 🌷 次に、Setting画面に現在のパスワードと新しいパスワードを正しく入力すると変更されるように以下の場所にコードを書いていきます  
 ![images](/images/app87.png) 
-🌷 以下のコードをonCreateメソッド内に書いてください  
-🌷 ほとんどSignUpActivutyの応用なのでなにが書いてあるか読んでみましょう  
+🌷 以下のコードをSettingsActivity.java の onCreateメソッド内に書いてください  
+🌷 ほとんどSignUpActivityの応用なので、なにが書いてあるか読んでみましょう  
 
 ```java
     String str_account_id = getIntent().getStringExtra("account_id");

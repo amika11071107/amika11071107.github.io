@@ -76,45 +76,30 @@
 
 
 
-🌷 左のSpring Bootを選択し、JDKは21以上にします
-🌷 Nameは好きな名前にに設定します
-🌷 私はLessonServerと設定しました。Nextを押し、
+🌷 左の Spring Bootを選択し、JDK は 21 以上にします
+🌷 Name は LessonServer と設定します
+🌷 Next を押し、
 
 
 
 
 
 
-🌷 Jerseyを選択し、Createを押します
+🌷 Jersey を選択し、Create を押します
 
 
 
 
 
 
-🌷 LessonServer を右クリックし、その下に entitesと、resourcesという名前の Pakage を作ります
+🌷 LessonServer を右クリックし、その下に entites と、resources という名前の Package を作ります
 
 
 
 
 
 
-🌷 entitiesの中には、Account.javaを作ります（画像ではrepositoriesパッケージが作られてしまっていますが無視してください）
-
-
-
-
-
-
-🌷Accountと入力します
-
-
-
-
-
-
-🌷 resorcesの中には、AccountsRest.javaを作ります 
-🌷 entitesやresourcesと同じ位置にJerseyConfigを作ります
+🌷 entitiesの中には、Account.java を作ります（画像では repositories パッケージが作られてしまっていますが無視してください）
 " />
   <meta name="author" content="←この日付無視してね" />
   
@@ -180,7 +165,7 @@
   <meta itemprop="description" content="ここはどこに表示されているのだろう">
   <meta itemprop="datePublished" content="2024-12-27T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-12-27T00:00:00+00:00">
-  <meta itemprop="wordCount" content="357">
+  <meta itemprop="wordCount" content="403">
   
   <meta property="og:url" content="https://amika11071107.github.io/post/intellij_idea/">
   <meta property="og:site_name" content="Nitta Labo Tutorial">
@@ -326,52 +311,52 @@
 <li></li>
 <li></li>
 </ul>
-<p>🌷 左のSpring Bootを選択し、JDKは21以上にします<br>
-🌷 Nameは好きな名前にに設定します<br>
-🌷 私はLessonServerと設定しました。Nextを押し、
+<p>🌷 左の Spring Bootを選択し、JDK は 21 以上にします<br>
+🌷 Name は LessonServer と設定します<br>
+🌷 Next を押し、
 <img src="https://amika11071107.github.io/images/in1.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 Jerseyを選択し、Createを押します
+<p>🌷 Jersey を選択し、Create を押します
 <img src="https://amika11071107.github.io/images/in2.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 LessonServer を右クリックし、その下に entitesと、resourcesという名前の Pakage を作ります</p>
+<p>🌷 LessonServer を右クリックし、その下に entites と、resources という名前の Package を作ります</p>
 <p><img src="https://amika11071107.github.io/images/in4.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 entitiesの中には、Account.javaを作ります（画像ではrepositoriesパッケージが作られてしまっていますが無視してください）
+<p>🌷 entitiesの中には、Account.java を作ります（画像では repositories パッケージが作られてしまっていますが無視してください）
 <img src="https://amika11071107.github.io/images/in5.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷Accountと入力します
+<p>🌷 Account と入力します
 <img src="https://amika11071107.github.io/images/in6.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 resorcesの中には、AccountsRest.javaを作ります <br>
-🌷 entitesやresourcesと同じ位置にJerseyConfigを作ります<br>
+<p>🌷 resorces の中には、AccountsRest.javaを作ります <br>
+🌷 entites や resources と同じ位置に JerseyConfig を作ります<br>
 <img src="https://amika11071107.github.io/images/in7.png" alt="images"></p>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
-<p>🌷 JerseyConfigには以下をコピペしてください</p>
+<p>🌷 JerseyConfig には以下をコピペしてください</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.LessonServer;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.glassfish.jersey.server.ResourceConfig;
@@ -389,10 +374,9 @@
 <li></li>
 <li></li>
 </ul>
-<p>🌷 Account.javaには以下をコピペしてください</p>
+<p>🌷 Account.javaには以下をコピペしてください<br>
+🌷このクラスは指定されたアカウントの情報（account_id と password）を返すために使われます</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.LessonServer.entities;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Account.java</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.LessonServer.entities;
 </span></span><span style="display:flex;"><span>
@@ -427,7 +411,21 @@
 <li></li>
 <li></li>
 </ul>
-<p>🌷 AccountRest.javaには以下をコピペしてください</p>
+<p>🌷 AccountRest.javaには以下のコードをコピペしてください<br>
+🌷 このクラスはSwaggerで定義したAPIに対応しています</p>
+<ul>
+<li>例 :<br>
+@Path(&quot;/accounts&quot;) はパスを表す<br>
+@GET や @POST はHTTPメソッドを表しています</li>
+</ul>
+<p>🌷 @PUT や @POST でパラメータを受け取るときは</p>
+<ul>
+<li>@Consumes(MediaType.APPLICATION_FORM_URLENCODED) をつける</li>
+</ul>
+<p>🌷 レスポンスを返すときは</p>
+<ul>
+<li>@Produces(MediaType.APPLICATION_JSON) を付ける</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.LessonServer.resources;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.LessonServer.entities.Account;

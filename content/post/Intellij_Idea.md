@@ -25,48 +25,48 @@ description = "ここはどこに表示されているのだろう"
 -  
 -  
 -  
-🌷 左のSpring Bootを選択し、JDKは21以上にします  
-🌷 Nameは好きな名前にに設定します  
-🌷 私はLessonServerと設定しました。Nextを押し、
+🌷 左の Spring Bootを選択し、JDK は 21 以上にします  
+🌷 Name は LessonServer と設定します  
+🌷 Next を押し、
 ![images](/images/in1.png)
 
 -  
 -  
 -  
-🌷 Jerseyを選択し、Createを押します
+🌷 Jersey を選択し、Create を押します
 ![images](/images/in2.png)
 
 -  
 -  
 -  
 
-🌷 LessonServer を右クリックし、その下に entitesと、resourcesという名前の Pakage を作ります  
+🌷 LessonServer を右クリックし、その下に entites と、resources という名前の Package を作ります  
 
 ![images](/images/in4.png)
 
 -  
 -  
 -  
-🌷 entitiesの中には、Account.javaを作ります（画像ではrepositoriesパッケージが作られてしまっていますが無視してください）
+🌷 entitiesの中には、Account.java を作ります（画像では repositories パッケージが作られてしまっていますが無視してください）
 ![images](/images/in5.png)
 
 -  
 -  
 -  
-🌷Accountと入力します
+🌷 Account と入力します
 ![images](/images/in6.png)
 
 -  
 -  
 -  
-🌷 resorcesの中には、AccountsRest.javaを作ります    
-🌷 entitesやresourcesと同じ位置にJerseyConfigを作ります  
+🌷 resorces の中には、AccountsRest.javaを作ります    
+🌷 entites や resources と同じ位置に JerseyConfig を作ります  
 ![images](/images/in7.png)
 
 -  
 -  
 -  
-🌷 JerseyConfigには以下をコピペしてください  
+🌷 JerseyConfig には以下をコピペしてください  
 ```java
 package com.example.LessonServer;
 
@@ -85,11 +85,11 @@ public class JerseyConfig extends ResourceConfig {
 -  
 -  
 -  
-🌷 Account.javaには以下をコピペしてください
+🌷 Account.javaには以下をコピペしてください  
+🌷このクラスは指定されたアカウントの情報（account_id と password）を返すために使われます  
+
 ```java
 package com.example.LessonServer.entities;
-
-// Account.java
 
 package com.example.LessonServer.entities;
 
@@ -125,7 +125,17 @@ public class Account {
 -  
 -  
 -  
-🌷 AccountRest.javaには以下をコピペしてください
+🌷 AccountRest.javaには以下のコードをコピペしてください  
+🌷 このクラスはSwaggerで定義したAPIに対応しています  
+-  例 :   
+@Path("/accounts") はパスを表す   
+@GET や @POST はHTTPメソッドを表しています  
+  
+🌷 @PUT や @POST でパラメータを受け取るときは  
+-  @Consumes(MediaType.APPLICATION_FORM_URLENCODED) をつける  
+  
+🌷 レスポンスを返すときは  
+-  @Produces(MediaType.APPLICATION_JSON) を付ける    
 ```java
 package com.example.LessonServer.resources;
 
