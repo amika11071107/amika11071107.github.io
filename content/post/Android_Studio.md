@@ -424,7 +424,7 @@ button_register.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         // LoginActivity に遷移するための Intent を作成
-        Intent intent = new Intent(CurrentActivity.this, LoginActivity.class);
+        Intent intent = new Intent(SignUpActivity.this, SettingsActivity.class);
         startActivity(intent); // 遷移を実行
     }
 });
