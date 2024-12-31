@@ -468,7 +468,8 @@ Intent は、Android でアクティビティ（画面）間の通信を行う�
 -  
 -  
 -   
-🌷 次に、サーバー（intellij）と通信できるようにするコードを追加し、SignUp時に、account_idとpasswordをサーバに保存してもらえるようにする  
+🌷 次に、サーバー（intellij）と通信できるようにするコードを追加し、SignUp時に、account_idとpasswordをサーバに保存してもらえるようにする   
+🌷 サーバーと通信を行うため、Android Studio を実行するときには、Intellijを先に実行させておく必要があります   
 🌷 まず、SignUpActivity.java の onCreate() メソッドに以下を書く
 ![images](/images/app83.png)
 🌷 AccountsRest accountsRest = retrofit.create(AccountsRest.class);  
