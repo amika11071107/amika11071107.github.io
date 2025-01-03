@@ -1,6 +1,6 @@
 ---
 author: ←この日付無視してね
-title: Postman
+title: Postman  ⏰約20分
 date: 2019-03-08
 description: 
 math: true
@@ -50,9 +50,9 @@ math: true
 🌷 {{< color  deeppink "x-www-form-urlencodedを選択" >}}    
 🌷 {{< color  deeppink "アカウントとパスワード" >}} の {{< color  purple "KeyとValueを入力するための欄が出てきます" >}}  
 🌷 {{< color  purple "Key" >}} に {{< color  green "account_id ,  password" >}}と{{< color  deeppink "入力" >}}  
-🌷 {{< color  purple "Value" >}} に 自分のつけたいアカウント名とパスワードを{{< color  deeppink "入力" >}} （ここでは myname と pass）   
+🌷 {{< color  purple "Value" >}} に 自分のつけたいアカウント名とパスワードを{{< color  deeppink "入力" >}} （ここでは name と password）   
 （これがフォームデータとして {{< color  deeppink "x-www-form-urlencoded" >}} 形式で送信される  
-🌷 **Intellij起動**して、  
+🌷 **Intellij起動**し、LessonServer実行してください、  
 🌷 {{< color  deeppink "Sendを押すと" >}}  
 🌷 {{< color  purple "200か204" >}}と表示されるとOKです      
 🌷 **{{< color  yellowgreen "localhost:8080" >}}**   
@@ -95,6 +95,8 @@ account_idとそれに対応するAccount情報（Account）がまとまったHa
 👀 Account.java  
 ![images](/images/aj.png)
 
-以上でPostmanは終わり🎉
+以上でPostmanは終わり🎉  
 
-次はAndroidStudioでフロントエンドを書いていくよ！
+4/5終わったよ🎊  何分かかかったかな？  休憩してね☕  
+
+次はAndroidStudioでフロントエンドを書いていくよ！  

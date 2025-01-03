@@ -1,6 +1,6 @@
 +++
 author = "←この日付無視してね"
-title = "Intellij IDEA"
+title = "Intellij IDEA  ⏰約20分 "
 date = "2024-12-27"
 description = "ここはどこに表示されているのだろう"
 
@@ -11,7 +11,7 @@ description = "ここはどこに表示されているのだろう"
 🌷 バックエンドのコードは、IntelliJ IDEA の Ultimate （学生および教職員向けの個人ライセンス）を使って書いていきます    
 
 🌷 以下は19thのシトラスプロジェクトです🍊  
-🌷 このように、プロジェクトでは entites, repositories, resources という3つのPakageを作り、その中に 	javaファイルを作っていきます  
+🌷 このように、プロジェクトでは entities, repositories, resources という3つのPackageを作り、その中に 	javaファイルを作っていきます  
 🌷 他のプロジェクトが開いた状態になっている人は、左上の4本線をクリックし、fileからclose projectを押します。
 ![images](/images/in.png)  
 
@@ -40,7 +40,7 @@ description = "ここはどこに表示されているのだろう"
 -  
 -  
 
-🌷 LessonServer を右クリックし、その下に entites と、resources という名前の Package を作ります  
+🌷 LessonServer を右クリックし、その下に entities と、resources という名前の Package を作ります  
 
 ![images](/images/in4.png)
 
@@ -60,7 +60,7 @@ description = "ここはどこに表示されているのだろう"
 -  
 -  
 🌷 resorces の中には、AccountsRest.javaを作ります    
-🌷 entites や resources と同じ位置に JerseyConfig を作ります  
+🌷 entities や resources と同じ位置に JerseyConfig を作ります  
 ![images](/images/in7.png)
 
 -  
@@ -222,6 +222,8 @@ public class AccountsRest {
 
 ```
 
-以上でIntellij ideaは終わり🎉
+以上でIntellij ideaは終わり🎉  
+
+3/5終わったよ🎊  何分かかかったかな？  休憩してね☕
 
 次はこのコードが動いているかPostmanで試していくよ！
