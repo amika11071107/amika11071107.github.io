@@ -163,6 +163,8 @@ description = ""
 -  
 -  
 🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける  
+🌷 1行目だけ消し、以下のように赤線のところにマウスをかざし、青色のメッセージをおす  
+![images](/images/app94.png)
 🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。  
 🌷 com.example.lessonを右クリックする。
 ![images](/images/app25.png)
