@@ -1,6 +1,6 @@
 +++
 author = "←この日付無視してね"
-title = "AndroidStudio"
+title = "AndroidStudio ⏰約100分"
 date = "2019-03-05"
 description = ""
 +++
@@ -24,7 +24,7 @@ description = ""
 -  
 -  
 -  
-🌷 Nameにタイトルを入力  
+🌷 Nameにタイトルを入力 （LesonServer）と入力 
 🌷 Build configuration languageを Groovy DSL にする  
 🌷 Minimum SDKを API30 にする  
 ![images](/images/app3.png)  
